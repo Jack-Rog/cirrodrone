@@ -62,10 +62,10 @@ export function BetaAccessPage({
                     buttonVariants({ size: "sm", variant: "outline" }),
                     "mt-5 border-white/90 bg-white text-primary hover:bg-slate-50"
                   )}
-                  href="mailto:hello@cirro.dev"
+                  href="mailto:hello@cirro-drone.com"
                 >
                   <Mail className="size-4" />
-                  hello@cirro.dev
+                  hello@cirro-drone.com
                 </a>
               </div>
             </section>

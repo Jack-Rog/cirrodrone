@@ -2,12 +2,13 @@
 
 import * as React from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Code2, Radio } from "lucide-react";
+import { Code2 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useForm, useWatch } from "react-hook-form";
 import { z } from "zod";
 
 import { FieldMessage } from "@/components/forms/field-message";
+import { DroneIcon } from "@/components/icons/cirro-icons";
 import { BetaAccessButton } from "@/components/ui/beta-access-button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
@@ -35,9 +36,9 @@ type BetaAccessFormValues = {
 };
 
 const audienceIcons = {
-  pilot: Radio,
+  pilot: DroneIcon,
   developer: Code2,
-} satisfies Record<EarlyAccessAudience, typeof Radio>;
+} satisfies Record<EarlyAccessAudience, React.ComponentType<{ className?: string; size?: number }>>;
 
 const fieldClassName =
   "border-slate-300 bg-white shadow-none focus-visible:border-primary focus-visible:ring-4 focus-visible:ring-primary/10";
@@ -184,7 +185,7 @@ export function BetaAccessForm({
                 <button
                   aria-pressed={selected}
                   className={cn(
-                    "flex min-h-[7.5rem] cursor-pointer flex-col items-start gap-3 rounded-[1.4rem] border px-4 py-4 text-left shadow-[0_16px_36px_-32px_rgba(22,40,65,0.22)] transition hover:-translate-y-0.5 sm:min-h-[8rem]",
+                    "flex min-h-[3.75rem] cursor-pointer items-center gap-3 rounded-[1.2rem] border px-4 py-3 text-left shadow-[0_16px_36px_-32px_rgba(22,40,65,0.22)] transition hover:-translate-y-0.5",
                     selected
                       ? "border-primary/40 bg-[linear-gradient(135deg,rgba(49,100,130,0.12),rgba(130,85,35,0.08))] text-slate-950 shadow-[0_20px_40px_-28px_rgba(22,40,65,0.28)]"
                       : "border-[rgba(49,100,130,0.14)] bg-[rgba(248,251,255,0.92)] text-slate-700 hover:border-[rgba(49,100,130,0.28)] hover:bg-white"
@@ -195,7 +196,7 @@ export function BetaAccessForm({
                 >
                   <span
                     className={cn(
-                      "inline-flex rounded-[1rem] border p-3 shadow-[0_14px_28px_-22px_rgba(22,40,65,0.28)]",
+                      "inline-flex shrink-0 rounded-[0.95rem] border p-2.5 shadow-[0_14px_28px_-22px_rgba(22,40,65,0.28)]",
                       selected
                         ? "border-primary/15 bg-white text-primary"
                         : "border-white/80 bg-white/90 text-slate-700"
@@ -203,11 +204,8 @@ export function BetaAccessForm({
                   >
                     <Icon className="size-5" />
                   </span>
-                  <span className="font-display text-xl font-extrabold tracking-[-0.04em]">
+                  <span className="font-display text-lg font-extrabold tracking-[-0.04em]">
                     {option.label}
-                  </span>
-                  <span className={cn("text-sm leading-6", selected ? "text-slate-600" : "text-slate-500")}>
-                    {option.description}
                   </span>
                 </button>
               );

@@ -35,7 +35,7 @@ export function Footer() {
               Questions about Cirro?
             </div>
             <a 
-              href="mailto:hello@cirro.dev"
+              href="mailto:hello@cirro-drone.com"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-lg transition-all"
               style={{ 
                 backgroundColor: 'rgba(49, 100, 130, 0.08)',
@@ -43,7 +43,7 @@ export function Footer() {
               }}
             >
               <Mail className="w-4 h-4" />
-              <span style={{ fontWeight: 600 }}>hello@cirro.dev</span>
+              <span style={{ fontWeight: 600 }}>hello@cirro-drone.com</span>
             </a>
           </motion.div>
 

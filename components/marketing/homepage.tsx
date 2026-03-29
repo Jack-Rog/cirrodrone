@@ -79,18 +79,18 @@ function MotionInView({
 }
 
 function LogoCarousel({ reducedMotion }: { reducedMotion: boolean }) {
-  const trackRef = React.useRef<HTMLDivElement | null>(null);
+  const groupRef = React.useRef<HTMLDivElement | null>(null);
   const [loopDistance, setLoopDistance] = React.useState(0);
 
   React.useEffect(() => {
-    const element = trackRef.current;
+    const element = groupRef.current;
 
     if (!element) {
       return;
     }
 
     const updateLoopDistance = () => {
-      setLoopDistance(element.scrollWidth / 2);
+      setLoopDistance(element.offsetWidth);
     };
 
     updateLoopDistance();
@@ -119,8 +119,7 @@ function LogoCarousel({ reducedMotion }: { reducedMotion: boolean }) {
 
         <motion.div
           animate={reducedMotion || loopDistance === 0 ? undefined : { x: [0, -loopDistance] }}
-          className="flex w-max items-center gap-10 will-change-transform"
-          ref={trackRef}
+          className="flex w-max items-center will-change-transform"
           transition={
             reducedMotion || loopDistance === 0
               ? undefined
@@ -131,13 +130,21 @@ function LogoCarousel({ reducedMotion }: { reducedMotion: boolean }) {
                 }
           }
         >
-          {[...partnerLogos, ...partnerLogos].map((logo, index) => (
-            <span
-              className="min-w-20 text-center text-base font-semibold tracking-[0.12em] text-slate-500 uppercase"
-              key={`${logo}-${index}`}
+          {[0, 1, 2].map((copyIndex) => (
+            <div
+              className="flex shrink-0 items-center gap-10 pr-10"
+              key={copyIndex}
+              ref={copyIndex === 0 ? groupRef : undefined}
             >
-              {logo}
-            </span>
+              {partnerLogos.map((logo) => (
+                <span
+                  className="min-w-20 text-center text-base font-semibold tracking-[0.12em] text-slate-500 uppercase"
+                  key={`${copyIndex}-${logo}`}
+                >
+                  {logo}
+                </span>
+              ))}
+            </div>
           ))}
         </motion.div>
       </div>
@@ -376,7 +383,7 @@ export function Homepage() {
 
         <section className="section-shell pt-10" id="beta-access">
           <MotionInView reducedMotion={Boolean(reducedMotion)}>
-            <div className="overflow-hidden rounded-[2.8rem] bg-[linear-gradient(135deg,#16354a_0%,#255e87_44%,#7a4f20_100%)] px-8 py-12 text-white shadow-[0_34px_90px_-38px_rgba(22,40,65,0.72)] md:px-12 md:py-16">
+            <div className="overflow-hidden rounded-[2.8rem] bg-[linear-gradient(135deg,#16354a_0%,#255e87_44%,#7a4f20_100%)] px-5 py-12 text-white shadow-[0_34px_90px_-38px_rgba(22,40,65,0.72)] sm:px-6 md:px-12 md:py-16">
               <div className="mx-auto max-w-3xl text-center">
                 <span className="inline-flex rounded-full border border-white/18 bg-white/10 px-4 py-2 text-[0.72rem] font-semibold tracking-[0.24em] text-white/72 uppercase">
                   Beta access
@@ -389,19 +396,24 @@ export function Homepage() {
                 </p>
               </div>
 
-              <div className="mt-12 grid gap-6 lg:grid-cols-2">
+              <div className="mt-12 grid gap-5 justify-items-center lg:grid-cols-2 lg:gap-6 lg:justify-items-stretch">
                 {betaTracks.map((track, index) => {
                   const Icon = track.icon;
 
                   return (
-                    <MotionInView delay={reducedMotion ? 0 : 0.12 + index * 0.08} key={track.title} reducedMotion={Boolean(reducedMotion)}>
-                      <div className={cn("flex h-full flex-col rounded-[2.2rem] border p-6 backdrop-blur-xl sm:p-8 lg:min-h-[22rem]", track.tone)}>
-                        <div className="flex items-start justify-between gap-6">
-                          <div className="min-w-0">
-                            <p className="font-display text-4xl font-black tracking-[-0.08em] text-white sm:text-5xl">
+                    <MotionInView
+                      className="w-full max-w-[32rem] min-w-0"
+                      delay={reducedMotion ? 0 : 0.12 + index * 0.08}
+                      key={track.title}
+                      reducedMotion={Boolean(reducedMotion)}
+                    >
+                      <div className={cn("mx-auto flex h-full w-full max-w-full min-w-0 flex-col overflow-hidden rounded-[2.2rem] border p-5 text-center backdrop-blur-xl sm:p-8 sm:text-left lg:min-h-[22rem]", track.tone)}>
+                        <div className="flex min-w-0 flex-col items-center gap-5 sm:flex-row sm:items-start sm:justify-between sm:gap-6">
+                          <div className="min-w-0 w-full">
+                            <p className="break-words font-display text-[clamp(2rem,10vw,3rem)] leading-none font-black tracking-[-0.08em] text-white sm:text-5xl">
                               {track.eyebrow}
                             </p>
-                            <h3 className="mt-5 max-w-sm font-display text-2xl font-extrabold tracking-[-0.04em] text-white">
+                            <h3 className="mt-4 text-balance font-display text-xl font-extrabold tracking-[-0.04em] text-white sm:mt-5 sm:max-w-sm sm:text-2xl">
                               {track.title}
                             </h3>
                           </div>
@@ -412,9 +424,11 @@ export function Homepage() {
                             <Icon className="size-7" />
                           </div>
                         </div>
-                        <p className="mt-5 max-w-xl text-base leading-7 text-white/78">{track.body}</p>
+                        <p className="mt-5 max-w-none break-words text-base leading-7 text-white/78 sm:max-w-xl">
+                          {track.body}
+                        </p>
                         <div className="mt-8 lg:mt-auto lg:pt-8">
-                          <BetaAccessButton className="w-full" href={track.href} size="lg" tone="light">
+                          <BetaAccessButton className="w-full min-w-0" href={track.href} size="lg" tone="light">
                             {track.cta}
                           </BetaAccessButton>
                         </div>
@@ -424,18 +438,18 @@ export function Homepage() {
                 })}
               </div>
               <div className="mt-10 flex flex-col items-center justify-center gap-3 text-center sm:flex-row">
-                <span className="text-sm text-white/68">
+                <span className="max-w-full break-words text-sm text-white/68">
                   Prefer a direct conversation before filling the form?
                 </span>
                 <a
                   className={cn(
                     buttonVariants({ size: "sm", variant: "outline" }),
-                    "border-white/18 bg-white text-primary hover:bg-slate-50"
+                    "min-w-0 max-w-full border-white/18 bg-white text-primary hover:bg-slate-50"
                   )}
-                  href="mailto:hello@cirro.dev"
+                  href="mailto:hello@cirro-drone.com"
                 >
                   <Mail className="size-4" />
-                  hello@cirro.dev
+                  hello@cirro-drone.com
                 </a>
               </div>
             </div>
@@ -459,10 +473,10 @@ export function Homepage() {
             <div className="flex flex-wrap items-center gap-3">
               <a
                 className="inline-flex items-center gap-2 rounded-full border border-white/80 bg-white px-4 py-2 text-sm font-semibold text-primary shadow-[0_18px_40px_-28px_rgba(26,45,70,0.34)] transition hover:bg-slate-50"
-                href="mailto:hello@cirro.dev"
+                href="mailto:hello@cirro-drone.com"
               >
                 <Mail className="size-4" />
-                hello@cirro.dev
+                hello@cirro-drone.com
               </a>
               <BetaAccessButton href="/beta-access" size="sm">
                 Request beta access

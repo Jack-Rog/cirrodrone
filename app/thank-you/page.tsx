@@ -107,10 +107,10 @@ export default async function ThankYouPage({ searchParams }: ThankYouPageProps) 
                   buttonVariants({ size: "lg", variant: "outline" }),
                   "border-white/90 bg-white/88 text-primary hover:bg-white"
                 )}
-                href="mailto:hello@cirro.dev"
+                href="mailto:hello@cirro-drone.com"
               >
                 <Mail className="size-4" />
-                hello@cirro.dev
+                hello@cirro-drone.com
               </a>
             </div>
           </div>

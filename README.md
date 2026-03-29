@@ -18,6 +18,7 @@ Real in this repo:
 
 - The public site, copy, routes, and conversion flows
 - The primary early-access capture action
+- Optional Supabase-backed persistence for beta-access submissions
 - The UI system, mock data models, and reusable product surfaces
 - The app-library, app-detail, and runtime-preview interactions
 
@@ -29,7 +30,7 @@ Mocked in this repo:
 - Design partner application persistence
 - Any actual drone control, MAVSDK integration, telemetry backend, auth, or marketplace behavior
 
-The early-access form will post to `EARLY_ACCESS_WEBHOOK_URL` if configured. If that env var is missing, it intentionally falls back to a logged demo-mode success so the site remains usable locally.
+The early-access form will write to Supabase if `NEXT_PUBLIC_SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` are configured. If Supabase is not configured, it will post to `EARLY_ACCESS_WEBHOOK_URL` if present. If neither backend is configured, it intentionally falls back to a logged demo-mode success so the site remains usable locally.
 
 ## Validation goals
 
@@ -54,6 +55,9 @@ This repo is successful if it helps generate:
 ## Routes
 
 - `/`
+- `/beta-access`
+- `/beta-access/pilot`
+- `/beta-access/developer`
 - `/submit-repo`
 - `/design-partner`
 - `/product/app-library`
@@ -71,8 +75,12 @@ pnpm dev
 Optional:
 
 ```bash
+$env:NEXT_PUBLIC_SUPABASE_URL="https://your-project-ref.supabase.co"
+$env:SUPABASE_SERVICE_ROLE_KEY="your-service-role-key"
 $env:EARLY_ACCESS_WEBHOOK_URL="https://your-webhook.example"
 ```
+
+If you want a simple database-backed inbox for beta requests, follow [docs/supabase-beta-access-setup.md](./docs/supabase-beta-access-setup.md).
 
 ## Checks
 

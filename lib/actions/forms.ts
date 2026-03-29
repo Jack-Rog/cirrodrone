@@ -12,6 +12,7 @@ import {
   isEarlyAccessFleet,
   normalizeEarlyAccessAudiences,
 } from "@/lib/early-access";
+import { getSupabaseAdminClient } from "@/lib/supabase/admin";
 
 const earlyAccessSchema = z.object({
   audiences: z
@@ -84,6 +85,33 @@ export async function submitEarlyAccess(
       ? `/thank-you?type=early-access&audience=${audiences[0]}`
       : `/thank-you?type=early-access&audiences=${serializedAudiences}`;
   const source = `cirro-beta-access-${audiences.join("-")}`;
+  const supabase = getSupabaseAdminClient();
+
+  if (supabase) {
+    const { error } = await supabase.from("beta_access_inquiries").insert({
+      audiences,
+      current_fleets: parsed.data.currentFleets,
+      email: parsed.data.email,
+      name: parsed.data.name,
+      pain_point: parsed.data.painPoint,
+      source,
+      why_beta_access: parsed.data.whyBetaAccess,
+    });
+
+    if (error) {
+      console.error("[Cirro] Supabase beta access insert failed", error);
+      return {
+        status: "error",
+        message: "We could not capture your request just now. Please try again.",
+      };
+    }
+
+    return {
+      status: "success",
+      message: "Thanks. Your request is on the list.",
+      redirectTo,
+    };
+  }
 
   if (!webhookUrl) {
     console.info("[Cirro] Mock early access capture", {
