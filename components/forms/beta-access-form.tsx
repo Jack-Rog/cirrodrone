@@ -286,10 +286,6 @@ export function BetaAccessForm({
           <FieldMessage message={errors.whyBetaAccess?.message} />
         </div>
 
-        <div className="rounded-[1.5rem] border border-[rgba(49,100,130,0.12)] bg-[linear-gradient(135deg,rgba(49,100,130,0.06),rgba(130,85,35,0.04))] px-5 py-4 text-sm leading-6 text-slate-600">
-          We only ask for the essentials so we can match your request to real fleet and workflow pressure.
-        </div>
-
         <div className="space-y-3">
           <p aria-live="polite" className="text-sm text-muted-foreground">
             {serverMessage ||

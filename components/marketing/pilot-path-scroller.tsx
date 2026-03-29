@@ -53,10 +53,9 @@ const pilotPathSteps: PilotPathStep[] = [
   },
   {
     description: [
-      "Deploy industry-leading apps in one click.",
-      "Write custom workflows yourself using Python.",
-      "Leverage your data in new ways.",
-      "Unlock your drone's true potential purely with software.",
+      "Deploy industry-leading apps.",
+      "Write custom workflows.",
+      "Access all your drone data.",
     ],
     icon: CloudInteractionIcon,
     id: "03",

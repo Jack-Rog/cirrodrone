@@ -16,19 +16,32 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://cirro.run"),
+  metadataBase: new URL("https://cirro-drone.com"),
+  alternates: {
+    canonical: "/",
+  },
   title: {
     default: "Cirro | Appstore for drones",
     template: "%s | Cirro",
   },
   description:
     "Deploy custom software to your current drone set-up, no configuration required. Request beta access to explore Cirro.",
+  manifest: "/manifest.webmanifest",
+  icons: {
+    icon: [
+      { url: "/brand/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/brand/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: [{ url: "/brand/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+    shortcut: ["/brand/favicon-32x32.png"],
+  },
   openGraph: {
     title: "Cirro | Appstore for drones",
     description:
       "Deploy custom software to your current drone set-up, no configuration required.",
     type: "website",
     siteName: "Cirro",
+    url: "/",
   },
   twitter: {
     card: "summary_large_image",

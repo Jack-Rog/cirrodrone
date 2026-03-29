@@ -9,6 +9,10 @@ import { CirroLogo } from "@/components/brand/cirro-logo";
 import { PilotPathScroller } from "@/components/marketing/pilot-path-scroller";
 import { BetaAccessButton } from "@/components/ui/beta-access-button";
 import {
+  BackgroundPaths,
+  BackgroundPathsBackdrop,
+} from "@/components/ui/background-paths";
+import {
   ApiIcon,
   AppIcon,
   CloudApiIcon,
@@ -278,8 +282,9 @@ export function Homepage() {
   const reducedMotion = useReducedMotion();
 
   return (
-    <div className="min-h-screen bg-white text-slate-900">
-      <main className="pb-24">
+    <div className="relative min-h-screen bg-white text-slate-900">
+      <BackgroundPathsBackdrop className="z-0 opacity-45" />
+      <main className="relative z-10 pb-24">
         <section className="relative overflow-hidden px-6 pb-10 pt-14 md:pt-18">
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_14%_18%,rgba(118,171,208,0.16),transparent_24%),radial-gradient(circle_at_84%_20%,rgba(130,85,35,0.12),transparent_20%),linear-gradient(180deg,#fbfdff_0%,#f3f7fb_40%,#ffffff_100%)]" />
           <motion.div
@@ -293,30 +298,36 @@ export function Homepage() {
           />
 
           <div className="section-shell relative">
-            <motion.div
-              animate={reducedMotion ? undefined : { opacity: 1, y: 0 }}
-              className="mx-auto max-w-4xl text-center"
-              initial={reducedMotion ? undefined : { opacity: 0, y: 24 }}
-              transition={{ duration: reducedMotion ? 0 : 0.8, ease: "easeOut" }}
+            <BackgroundPaths
+              className="min-h-[22rem] rounded-[2.8rem] border border-white/75 bg-white/68 shadow-[0_30px_80px_-42px_rgba(22,40,65,0.28)] backdrop-blur-xl sm:min-h-[24rem] lg:min-h-[27rem]"
+              contentClassName="px-4 py-12 sm:px-6 sm:py-14 lg:py-16"
+              showButton={false}
             >
-              <div className="flex justify-center">
-                <CirroLogo size={96} wordmark={false} />
-              </div>
-              <h1 className="mt-8 text-balance font-display text-5xl font-extrabold tracking-[-0.07em] text-slate-950 sm:text-6xl lg:text-8xl">
-                Appstore for <span className="text-primary">drones</span>
-              </h1>
-              <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-600 sm:text-xl">
-                Deploy custom software to your current drone set-up, no configuration required.
-              </p>
-              <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-slate-500 sm:text-base">
-                For pilots and developers testing real drone workflows.
-              </p>
-              <div className="mt-8 flex justify-center">
-                <BetaAccessButton href="/beta-access" size="lg">
-                  Request beta access
-                </BetaAccessButton>
-              </div>
-            </motion.div>
+              <motion.div
+                animate={reducedMotion ? undefined : { opacity: 1, y: 0 }}
+                className="mx-auto max-w-4xl text-center"
+                initial={reducedMotion ? undefined : { opacity: 0, y: 24 }}
+                transition={{ duration: reducedMotion ? 0 : 0.8, ease: "easeOut" }}
+              >
+                <div className="flex justify-center">
+                  <CirroLogo size={96} wordmark={false} />
+                </div>
+                <h1 className="mt-8 text-balance font-display text-5xl font-extrabold tracking-[-0.07em] text-slate-950 sm:text-6xl lg:text-8xl">
+                  Appstore for <span className="text-primary">drones</span>
+                </h1>
+                <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-600 sm:text-xl">
+                  Deploy custom software to your current drone set-up, no configuration required.
+                </p>
+                <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-slate-500 sm:text-base">
+                  For pilots and developers testing real drone workflows.
+                </p>
+                <div className="mt-8 flex justify-center">
+                  <BetaAccessButton href="/beta-access" size="lg">
+                    Request beta access
+                  </BetaAccessButton>
+                </div>
+              </motion.div>
+            </BackgroundPaths>
 
             <div className="mt-14 lg:hidden">
               <div className="rounded-[2rem] border border-white/75 bg-white/82 p-4 shadow-[0_28px_70px_-40px_rgba(26,45,70,0.28)] backdrop-blur-xl sm:p-5">
