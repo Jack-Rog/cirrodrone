@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cirro | Capability Manifest</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Manrope & Inter -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed": "#d4e4f6",
+              "surface-container": "#ebeef0",
+              "surface-dim": "#d5dbdd",
+              "tertiary": "#685781",
+              "error-container": "#fa746f",
+              "surface": "#f8f9fa",
+              "on-background": "#2d3335",
+              "background": "#f8f9fa",
+              "outline-variant": "#adb3b5",
+              "surface-tint": "#316482",
+              "inverse-primary": "#a6d8fb",
+              "secondary-dim": "#455564",
+              "primary-fixed-dim": "#98caec",
+              "inverse-on-surface": "#9b9d9e",
+              "on-surface-variant": "#5a6062",
+              "surface-bright": "#f8f9fa",
+              "on-primary-fixed-variant": "#1f5673",
+              "on-tertiary-fixed": "#403158",
+              "surface-variant": "#dee3e6",
+              "on-primary-fixed": "#003851",
+              "on-surface": "#2d3335",
+              "on-tertiary-fixed-variant": "#5d4d76",
+              "tertiary-dim": "#5c4c74",
+              "outline": "#767c7e",
+              "error-dim": "#67040d",
+              "primary-fixed": "#a6d8fb",
+              "surface-container-high": "#e5e9eb",
+              "secondary-container": "#d4e4f6",
+              "tertiary-fixed": "#e3ceff",
+              "on-primary": "#f5f9ff",
+              "secondary-fixed-dim": "#c6d6e8",
+              "on-error-container": "#6e0a12",
+              "on-primary-container": "#124c69",
+              "secondary": "#516170",
+              "on-tertiary-container": "#53436c",
+              "on-tertiary": "#fef7ff",
+              "tertiary-fixed-dim": "#d5c1f1",
+              "surface-container-low": "#f1f4f5",
+              "on-secondary-fixed": "#31414f",
+              "error": "#a83836",
+              "on-secondary-container": "#445362",
+              "primary-dim": "#225876",
+              "primary-container": "#a6d8fb",
+              "on-secondary-fixed-variant": "#4d5d6c",
+              "primary": "#316482",
+              "surface-container-highest": "#dee3e6",
+              "on-secondary": "#f6f9ff",
+              "inverse-surface": "#0c0f10",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-container": "#e3ceff",
+              "on-error": "#fff7f6"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .primary-gradient {
+            background: linear-gradient(135deg, #316482 0%, #225876 100%);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-extrabold tracking-tighter text-sky-800 dark:text-sky-300 font-headline">Cirro</span>
+<div class="hidden md:flex gap-6">
+<a class="text-slate-600 dark:text-slate-400 hover:text-sky-600 dark:hover:text-sky-300 transition-colors font-headline font-bold tracking-tight" href="#">Apps</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-sky-600 dark:hover:text-sky-300 transition-colors font-headline font-bold tracking-tight" href="#">How it Works</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-sky-600 dark:hover:text-sky-300 transition-colors font-headline font-bold tracking-tight" href="#">Documentation</a>
+<a class="text-sky-700 dark:text-sky-400 border-b-2 border-sky-700 dark:border-sky-400 pb-1 font-headline font-bold tracking-tight" href="#">Console</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="primary-gradient text-on-primary px-5 py-2 rounded-lg font-headline font-bold text-sm shadow-md active:scale-95 transform transition-transform">
+                    Build an App
+                </button>
+</div>
+</div>
+</nav>
+<main class="pt-24 pb-20 px-6 max-w-7xl mx-auto">
+<!-- Hero Header Section -->
+<header class="mb-12">
+<div class="flex items-center gap-2 mb-2">
+<span class="bg-secondary-container text-on-secondary-container text-[11px] font-bold tracking-[0.1em] px-3 py-1 rounded-full uppercase">Project Config</span>
+</div>
+<h1 class="text-[3.75rem] font-extrabold font-headline leading-[1.1] tracking-tight text-on-surface mb-4">Capability Manifest</h1>
+<p class="text-[1.125rem] text-on-surface-variant max-w-2xl leading-relaxed">
+                Define the operational boundaries and hardware requirements for your drone application. These declarations ensure safe and compatible deployments across the fleet.
+            </p>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Left Column: Core Permissions (Glass Card) -->
+<section class="md:col-span-8 bg-surface-container-lowest rounded-xl shadow-md p-8">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-primary" style="font-size: 32px;">verified_user</span>
+<h2 class="text-2xl font-bold font-headline">App Permissions</h2>
+</div>
+<div class="space-y-6">
+<!-- Permission Item -->
+<div class="flex items-start justify-between p-4 rounded-xl hover:bg-surface-container-low transition-colors duration-200 group">
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-lg bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container">query_stats</span>
+</div>
+<div>
+<h3 class="font-bold text-lg text-on-surface">Telemetry Access</h3>
+<p class="text-sm text-on-surface-variant">Real-time altitude, speed, and battery health data stream.</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer mt-2">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="flex items-start justify-between p-4 rounded-xl hover:bg-surface-container-low transition-colors duration-200 group border-t border-surface-variant/20 pt-6">
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-lg bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container">videocam</span>
+</div>
+<div>
+<h3 class="font-bold text-lg text-on-surface">Video Streaming</h3>
+<p class="text-sm text-on-surface-variant">Access to primary FPV and payload camera video buffers.</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer mt-2">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="flex items-start justify-between p-4 rounded-xl hover:bg-surface-container-low transition-colors duration-200 group border-t border-surface-variant/20 pt-6">
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-lg bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container">location_on</span>
+</div>
+<div>
+<h3 class="font-bold text-lg text-on-surface">GPS &amp; Positioning</h3>
+<p class="text-sm text-on-surface-variant">Sub-meter precision coordinate access for pathing.</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer mt-2">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="flex items-start justify-between p-4 rounded-xl hover:bg-surface-container-low transition-colors duration-200 group border-t border-surface-variant/20 pt-6">
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-lg bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container">settings_remote</span>
+</div>
+<div>
+<h3 class="font-bold text-lg text-on-surface">Mission Control Actions</h3>
+<p class="text-sm text-on-surface-variant">Authority to override waypoints and landing sequences.</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer mt-2">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="flex items-start justify-between p-4 rounded-xl hover:bg-surface-container-low transition-colors duration-200 group border-t border-surface-variant/20 pt-6">
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-lg bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container">photo_camera</span>
+</div>
+<div>
+<h3 class="font-bold text-lg text-on-surface">Camera &amp; Gimbal Controls</h3>
+<p class="text-sm text-on-surface-variant">Adjust pitch, yaw, roll, and zoom parameters in-flight.</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer mt-2">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</section>
+<!-- Right Column: Hardware Requirements & Context -->
+<aside class="md:col-span-4 space-y-6">
+<!-- Hardware Requirements -->
+<div class="bg-surface-container-low rounded-xl p-8 shadow-sm">
+<h2 class="text-xl font-bold font-headline mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined">sensors</span>
+                        Sensor Compatibility
+                    </h2>
+<p class="text-sm text-on-surface-variant mb-6">Select specific sensor requirements for deployment eligibility.</p>
+<div class="space-y-4">
+<label class="flex items-center gap-3 cursor-pointer p-3 rounded-lg hover:bg-surface-container-high transition-all">
+<input class="w-5 h-5 rounded border-outline text-primary focus:ring-primary" type="checkbox"/>
+<span class="font-medium">Thermal Imaging (IR)</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer p-3 rounded-lg hover:bg-surface-container-high transition-all">
+<input checked="" class="w-5 h-5 rounded border-outline text-primary focus:ring-primary" type="checkbox"/>
+<span class="font-medium">LiDAR Scanner</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer p-3 rounded-lg hover:bg-surface-container-high transition-all">
+<input class="w-5 h-5 rounded border-outline text-primary focus:ring-primary" type="checkbox"/>
+<span class="font-medium">Multispectral Sensor</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer p-3 rounded-lg hover:bg-surface-container-high transition-all">
+<input class="w-5 h-5 rounded border-outline text-primary focus:ring-primary" type="checkbox"/>
+<span class="font-medium">Ultrasonic Obstacle Avoidance</span>
+</label>
+</div>
+</div>
+<!-- Info Card -->
+<div class="primary-gradient rounded-xl p-8 text-on-primary shadow-xl">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined">info</span>
+<h3 class="font-bold font-headline">Safety Protocol</h3>
+</div>
+<p class="text-sm leading-relaxed opacity-90 mb-6">
+                        Declared permissions are immutable once the app is deployed to the production registry. Ensure all required sensors are correctly specified to avoid takeoff rejection.
+                    </p>
+<button class="w-full bg-white/20 hover:bg-white/30 backdrop-blur-md py-3 rounded-lg text-sm font-bold font-headline transition-all">
+                        Review Policy
+                    </button>
+</div>
+<!-- Image / Visualization -->
+<div class="h-48 rounded-xl overflow-hidden relative shadow-md">
+<img class="w-full h-full object-cover" data-alt="Close up of high tech drone sensor array" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDotxXt05LByj3JtIflz4FiwxPo9CZfu3Yl6rAIE8ozN6L2miiNEwroWErqOwMFNumuMu6ikuUOFJLRyKW9BgqHqmF66FMOfS7LL91G9liVJFV4Fqnz63W-GCVEL4niZT6xDegMDSmGs7vaxkBmsPBT3yFwYIlJLAJKJeL5runJgasJUrfvniXfrZUe_nqCVTKa4tMpS2Nb0uD6Lwlv9ZfGeMlnSXBQCmUbGNiQsN1-k7KWmvTepaMkX2_AHgvx0FpQ-iefR78mGqMY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dim/80 to-transparent flex items-end p-4">
+<span class="text-[11px] font-bold tracking-[0.1em] text-white uppercase">Payload Inspection</span>
+</div>
+</div>
+</aside>
+</div>
+<!-- Sticky Footer Action -->
+<div class="fixed bottom-0 left-0 w-full py-6 px-8 flex justify-end items-center gap-4 bg-white/40 backdrop-blur-xl border-t border-white/20">
+<button class="px-6 py-3 rounded-lg font-bold font-headline text-on-surface hover:bg-surface-container-high transition-all">Discard Changes</button>
+<button class="primary-gradient px-8 py-3 rounded-lg font-bold font-headline text-on-primary shadow-lg active:scale-95 transition-all">Generate Manifest</button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-950 w-full rounded-none border-t border-slate-200 dark:border-slate-800">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 px-8 py-12 max-w-7xl mx-auto">
+<div class="col-span-2 md:col-span-1">
+<span class="font-['Manrope'] font-bold text-slate-800 dark:text-slate-200 text-xl block mb-4">Cirro Drones</span>
+<p class="font-['Inter'] text-sm text-slate-500 dark:text-slate-400">Advanced flight orchestration for the modern enterprise.</p>
+</div>
+<div class="flex flex-col gap-2">
+<h4 class="font-bold text-on-surface text-sm mb-2">Resources</h4>
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-500 hover:underline transition-all text-sm" href="#">Documentation</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-500 hover:underline transition-all text-sm" href="#">API Reference</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-500 hover:underline transition-all text-sm" href="#">Community</a>
+</div>
+<div class="flex flex-col gap-2">
+<h4 class="font-bold text-on-surface text-sm mb-2">Company</h4>
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-500 hover:underline transition-all text-sm" href="#">Privacy Policy</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-500 hover:underline transition-all text-sm" href="#">Terms of Service</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-500 hover:underline transition-all text-sm" href="#">Status</a>
+</div>
+<div class="flex flex-col gap-2">
+<h4 class="font-bold text-on-surface text-sm mb-2">Support</h4>
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-500 hover:underline transition-all text-sm" href="#">Help Center</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-500 hover:underline transition-all text-sm" href="#">Contact Us</a>
+</div>
+</div>
+<div class="px-8 py-6 max-w-7xl mx-auto border-t border-slate-200/50 dark:border-slate-800/50">
+<p class="font-['Inter'] text-sm text-slate-500 dark:text-slate-400">© 2024 Cirro Drones. All rights reserved.</p>
+</div>
+</footer>
+</body></html>

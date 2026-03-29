@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Connect Repository | Cirro</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed": "#d4e4f6",
+              "surface-container": "#ebeef0",
+              "surface-dim": "#d5dbdd",
+              "tertiary": "#685781",
+              "error-container": "#fa746f",
+              "surface": "#f8f9fa",
+              "on-background": "#2d3335",
+              "background": "#f8f9fa",
+              "outline-variant": "#adb3b5",
+              "surface-tint": "#316482",
+              "inverse-primary": "#a6d8fb",
+              "secondary-dim": "#455564",
+              "primary-fixed-dim": "#98caec",
+              "inverse-on-surface": "#9b9d9e",
+              "on-surface-variant": "#5a6062",
+              "surface-bright": "#f8f9fa",
+              "on-primary-fixed-variant": "#1f5673",
+              "on-tertiary-fixed": "#403158",
+              "surface-variant": "#dee3e6",
+              "on-primary-fixed": "#003851",
+              "on-surface": "#2d3335",
+              "on-tertiary-fixed-variant": "#5d4d76",
+              "tertiary-dim": "#5c4c74",
+              "outline": "#767c7e",
+              "error-dim": "#67040d",
+              "primary-fixed": "#a6d8fb",
+              "surface-container-high": "#e5e9eb",
+              "secondary-container": "#d4e4f6",
+              "tertiary-fixed": "#e3ceff",
+              "on-primary": "#f5f9ff",
+              "secondary-fixed-dim": "#c6d6e8",
+              "on-error-container": "#6e0a12",
+              "on-primary-container": "#124c69",
+              "secondary": "#516170",
+              "on-tertiary-container": "#53436c",
+              "on-tertiary": "#fef7ff",
+              "tertiary-fixed-dim": "#d5c1f1",
+              "surface-container-low": "#f1f4f5",
+              "on-secondary-fixed": "#31414f",
+              "error": "#a83836",
+              "on-secondary-container": "#445362",
+              "primary-dim": "#225876",
+              "primary-container": "#a6d8fb",
+              "on-secondary-fixed-variant": "#4d5d6c",
+              "primary": "#316482",
+              "surface-container-highest": "#dee3e6",
+              "on-secondary": "#f6f9ff",
+              "inverse-surface": "#0c0f10",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-container": "#e3ceff",
+              "on-error": "#fff7f6"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-panel {
+        backdrop-filter: blur(20px);
+      }
+      .primary-gradient {
+        background: linear-gradient(135deg, #316482 0%, #225876 100%);
+      }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-extrabold tracking-tighter text-sky-800 dark:text-sky-300 font-headline">Cirro</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-slate-600 dark:text-slate-400 hover:text-sky-600 dark:hover:text-sky-300 transition-colors font-headline font-bold tracking-tight" href="#">Apps</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-sky-600 dark:hover:text-sky-300 transition-colors font-headline font-bold tracking-tight" href="#">How it Works</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-sky-600 dark:hover:text-sky-300 transition-colors font-headline font-bold tracking-tight" href="#">Documentation</a>
+<a class="text-sky-700 dark:text-sky-400 border-b-2 border-sky-700 dark:border-sky-400 pb-1 font-headline font-bold tracking-tight" href="#">Console</a>
+</div>
+<button class="primary-gradient text-on-primary px-6 py-2.5 rounded-lg font-semibold shadow-md active:scale-95 transition-all">
+                Build an App
+            </button>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-6 max-w-7xl mx-auto">
+<!-- Hero Header -->
+<header class="mb-16">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold tracking-wider mb-6">
+<span class="material-symbols-outlined text-sm">cloud_sync</span>
+                DEPLOYMENT WORKFLOW
+            </div>
+<h1 class="font-headline font-extrabold text-6xl text-on-surface leading-[1.1] tracking-tight mb-4">Link your source code.</h1>
+<p class="text-xl text-on-surface-variant max-w-2xl leading-relaxed">
+                Connect your GitHub repository to enable automated builds, testing, and seamless publishing to the Cirro Cloud network.
+            </p>
+</header>
+<!-- Step-based Interface -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Sidebar Status/Navigation -->
+<aside class="lg:col-span-3">
+<div class="space-y-8 sticky top-32">
+<div class="flex gap-4">
+<div class="flex flex-col items-center">
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold shadow-md">1</div>
+<div class="w-0.5 h-16 bg-surface-variant"></div>
+</div>
+<div class="pt-2">
+<h3 class="font-headline font-bold text-on-surface">Authentication</h3>
+<p class="text-sm text-on-surface-variant">Connect your GitHub account</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="flex flex-col items-center">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center font-bold">2</div>
+<div class="w-0.5 h-16 bg-surface-variant"></div>
+</div>
+<div class="pt-2">
+<h3 class="font-headline font-bold text-outline">Repository</h3>
+<p class="text-sm text-on-surface-variant">Select your project</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="flex flex-col items-center">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center font-bold">3</div>
+</div>
+<div class="pt-2">
+<h3 class="font-headline font-bold text-outline">Deploy</h3>
+<p class="text-sm text-on-surface-variant">Configure and publish</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<div class="lg:col-span-9 space-y-12">
+<!-- Section 1: Connect GitHub -->
+<section class="bg-surface-container-lowest rounded-xl p-8 shadow-md border border-surface-variant/10">
+<div class="flex items-start justify-between mb-8">
+<div>
+<h2 class="text-2xl font-headline font-bold mb-2">Connect GitHub Account</h2>
+<p class="text-on-surface-variant">Authorize Cirro to read your repositories and set up webhooks.</p>
+</div>
+<div class="px-4 py-2 bg-secondary-container text-on-secondary-container rounded-full text-sm font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            Linked as @aero_dev
+                        </div>
+</div>
+<div class="flex items-center gap-6 p-6 rounded-xl bg-surface-container-low">
+<img alt="Profile" class="w-16 h-16 rounded-full border-4 border-surface-container-lowest shadow-sm" data-alt="Developer profile avatar on dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBK_tMUvsnALJgWCd9LWAtpR08YfNt1BZanHS5liDgaqWvP_loarFeLZzEtJ1UhKXeHB_RZgrre8cu7p5hizhCSde-bMYsYitzI_Aoe1C0kjoavzRqLMlDxi6VWPa1_NZEiItZtMl4FPkmhXpQ51li0e2njqRFTapiLdnKL3ZbjiTDp2Vkm4FHqAhqnrFck3zxpHopr5FnkxGuYXweURARVtuuOUOe3RSJT3qCuC1h8ZDOvPWKfREr8m5bNyq968zwKdZrfx4xlFXIT"/>
+<div class="flex-1">
+<div class="font-headline font-bold text-lg">Alex Rivero</div>
+<div class="text-on-surface-variant text-sm tracking-tight">alex.rivero@cirro-labs.io</div>
+</div>
+<button class="px-4 py-2 text-sm font-semibold text-primary hover:bg-primary-container/30 rounded-lg transition-colors">
+                            Switch Account
+                        </button>
+</div>
+</section>
+<!-- Section 2: Repository Search -->
+<section class="bg-surface-container-lowest rounded-xl p-8 shadow-md border border-surface-variant/10">
+<h2 class="text-2xl font-headline font-bold mb-6">Select a Repository</h2>
+<div class="relative mb-8">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-12 pr-4 py-4 rounded-xl bg-surface-container-low border-transparent focus:border-primary focus:ring-0 transition-all text-lg placeholder:text-outline/60" placeholder="Search your repositories..." type="text"/>
+</div>
+<div class="space-y-3">
+<!-- Repo Item 1 (Selected) -->
+<div class="flex items-center justify-between p-5 rounded-xl border-2 border-primary bg-primary-container/10">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-3xl">terminal</span>
+<div>
+<div class="font-headline font-bold text-on-surface">cirro-drones / fleet-manager-v2</div>
+<div class="text-sm text-on-surface-variant">Updated 2 hours ago • Public</div>
+</div>
+</div>
+<div class="flex items-center gap-2 text-primary font-bold">
+<span class="material-symbols-outlined">check_circle</span>
+                                Selected
+                            </div>
+</div>
+<!-- Repo Item 2 -->
+<div class="flex items-center justify-between p-5 rounded-xl border border-surface-variant/20 hover:bg-surface-container-low transition-all cursor-pointer group">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-3xl">inventory_2</span>
+<div>
+<div class="font-headline font-bold text-on-surface">cirro-drones / sky-nav-module</div>
+<div class="text-sm text-on-surface-variant">Updated 3 days ago • Private</div>
+</div>
+</div>
+<button class="px-4 py-2 rounded-lg bg-surface-container-high text-on-surface font-semibold text-sm group-hover:bg-primary group-hover:text-on-primary transition-all">
+                                Select
+                            </button>
+</div>
+</div>
+</section>
+<!-- Section 3: App Manifest Preview -->
+<section class="bg-surface-container-lowest rounded-xl p-8 shadow-md border border-surface-variant/10">
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-2xl font-headline font-bold">manifest.json Preview</h2>
+<span class="text-xs font-bold tracking-widest text-outline bg-surface-container-high px-2 py-1 rounded">READ ONLY</span>
+</div>
+<div class="bg-[#0c0f10] rounded-xl p-6 font-mono text-sm overflow-hidden relative">
+<div class="absolute top-4 right-4 text-slate-500">
+<span class="material-symbols-outlined text-lg">data_object</span>
+</div>
+<pre class="text-sky-300">{
+  <span class="text-tertiary-fixed-dim">"id"</span>: <span class="text-secondary-fixed">"cirro-fleet-manager"</span>,
+  <span class="text-tertiary-fixed-dim">"version"</span>: <span class="text-secondary-fixed">"2.4.0"</span>,
+  <span class="text-tertiary-fixed-dim">"entry"</span>: <span class="text-secondary-fixed">"src/index.ts"</span>,
+  <span class="text-tertiary-fixed-dim">"permissions"</span>: [
+    <span class="text-secondary-fixed">"telemetry.read"</span>,
+    <span class="text-secondary-fixed">"flight_path.write"</span>
+  ],
+  <span class="text-tertiary-fixed-dim">"environment"</span>: {
+    <span class="text-tertiary-fixed-dim">"runtime"</span>: <span class="text-secondary-fixed">"cirro-core-v1"</span>
+  }
+}
+                        </pre>
+</div>
+<div class="mt-8 flex items-center justify-between p-6 bg-surface-container rounded-xl">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-white flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary">verified_user</span>
+</div>
+<div>
+<div class="font-headline font-bold">Valid Manifest Found</div>
+<div class="text-sm text-on-surface-variant">Required for testing and publishing steps.</div>
+</div>
+</div>
+<div class="flex gap-4">
+<button class="px-6 py-3 rounded-lg font-bold bg-surface-container-highest hover:bg-surface-dim transition-all text-on-surface">
+                                Run Local Test
+                            </button>
+<button class="primary-gradient text-on-primary px-8 py-3 rounded-lg font-bold shadow-lg active:scale-95 transition-all">
+                                Continue to Deploy
+                            </button>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-950 w-full rounded-none border-t border-slate-200 dark:border-slate-800">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 px-8 py-12 max-w-7xl mx-auto">
+<div class="col-span-2 md:col-span-1">
+<div class="font-['Manrope'] font-bold text-slate-800 dark:text-slate-200 text-xl mb-4">Cirro</div>
+<p class="font-['Inter'] text-sm text-slate-500 dark:text-slate-400 max-w-xs leading-relaxed">
+                    The next-generation cloud infrastructure for autonomous drone fleet management and application hosting.
+                </p>
+</div>
+<div>
+<h4 class="font-headline font-bold text-on-surface mb-4">Platform</h4>
+<div class="flex flex-col gap-2">
+<a class="font-['Inter'] text-sm text-slate-500 dark:text-slate-400 hover:text-sky-500 hover:underline transition-all" href="#">API Reference</a>
+<a class="font-['Inter'] text-sm text-slate-500 dark:text-slate-400 hover:text-sky-500 hover:underline transition-all" href="#">Status</a>
+<a class="font-['Inter'] text-sm text-slate-500 dark:text-slate-400 hover:text-sky-500 hover:underline transition-all" href="#">Documentation</a>
+</div>
+</div>
+<div>
+<h4 class="font-headline font-bold text-on-surface mb-4">Community</h4>
+<div class="flex flex-col gap-2">
+<a class="font-['Inter'] text-sm text-slate-500 dark:text-slate-400 hover:text-sky-500 hover:underline transition-all" href="#">Community</a>
+<a class="font-['Inter'] text-sm text-slate-500 dark:text-slate-400 hover:text-sky-500 hover:underline transition-all" href="#">Support</a>
+<a class="font-['Inter'] text-sm text-slate-500 dark:text-slate-400 hover:text-sky-500 hover:underline transition-all" href="#">Privacy Policy</a>
+</div>
+</div>
+<div class="col-span-2 md:col-span-4 mt-8 pt-8 border-t border-slate-200 dark:border-slate-800 flex justify-between items-center">
+<span class="font-['Inter'] text-sm text-slate-500 dark:text-slate-400">© 2024 Cirro Drones. All rights reserved.</span>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-outline hover:text-primary cursor-pointer transition-colors">brand_awareness</span>
+<span class="material-symbols-outlined text-outline hover:text-primary cursor-pointer transition-colors">public</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-fixed-variant": "#5d4d76",
+              "surface-container-high": "#e5e9eb",
+              "on-secondary-fixed-variant": "#4d5d6c",
+              "inverse-on-surface": "#9b9d9e",
+              "tertiary-dim": "#5c4c74",
+              "secondary-fixed-dim": "#c6d6e8",
+              "on-error": "#fff7f6",
+              "outline": "#767c7e",
+              "surface-container-highest": "#dee3e6",
+              "surface-dim": "#d5dbdd",
+              "tertiary": "#685781",
+              "surface-container": "#ebeef0",
+              "on-primary": "#f5f9ff",
+              "on-tertiary-fixed": "#403158",
+              "inverse-primary": "#a6d8fb",
+              "primary-dim": "#225876",
+              "error-container": "#fa746f",
+              "on-tertiary": "#fef7ff",
+              "on-primary-container": "#124c69",
+              "primary-fixed-dim": "#98caec",
+              "secondary": "#516170",
+              "on-secondary": "#f6f9ff",
+              "on-primary-fixed": "#003851",
+              "on-surface": "#2d3335",
+              "background": "#f8f9fa",
+              "on-secondary-container": "#445362",
+              "secondary-fixed": "#d4e4f6",
+              "secondary-dim": "#455564",
+              "primary": "#316482",
+              "error": "#a83836",
+              "surface-bright": "#f8f9fa",
+              "surface-tint": "#316482",
+              "on-background": "#2d3335",
+              "primary-fixed": "#a6d8fb",
+              "primary-container": "#a6d8fb",
+              "tertiary-fixed": "#e3ceff",
+              "surface-container-lowest": "#ffffff",
+              "inverse-surface": "#0c0f10",
+              "secondary-container": "#d4e4f6",
+              "surface-container-low": "#f1f4f5",
+              "on-tertiary-container": "#53436c",
+              "tertiary-fixed-dim": "#d5c1f1",
+              "surface-variant": "#dee3e6",
+              "error-dim": "#67040d",
+              "on-surface-variant": "#5a6062",
+              "outline-variant": "#adb3b5"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-on-surface">
+<!-- TopNavBar Execution -->
+<header class="fixed top-0 w-full z-50 glass-panel bg-white/80 dark:bg-slate-900/80 shadow-sm">
+<div class="flex justify-between items-center h-20 px-12 w-full max-w-screen-2xl mx-auto">
+<div class="text-2xl font-extrabold tracking-tighter text-sky-800 dark:text-sky-100 font-headline">
+                Cirro
+            </div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-600 font-manrope font-bold tracking-tight leading-[1.1] text-lg transition-all active:scale-95" href="#">Home</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-600 font-manrope font-bold tracking-tight leading-[1.1] text-lg transition-all active:scale-95" href="#">Apps</a>
+<a class="text-sky-700 dark:text-sky-400 border-b-2 border-sky-700 dark:border-sky-400 pb-1 font-manrope font-bold tracking-tight leading-[1.1] text-lg transition-all active:scale-95" href="#">Sessions</a>
+</nav>
+<div class="flex items-center gap-6">
+<button class="bg-primary text-on-primary px-5 py-2.5 rounded-lg font-medium transition-all active:scale-95 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">add</span>
+                    Connect Drone
+                </button>
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover" data-alt="User Profile Avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAH-A4sQgn2fzwowwgE34n7ToEbfMGctnQs94eQIIzI-_Ugh9h4pyEoZG4K7VNDHfogMjOGJ8Cx5ZVAZFxgVYHfnDooo_AKcLGH-7l4F9XyKmG1MIBd7h5oyd8fSmOD3lHzNo_sZ_H5833WEBa5sRteanO_1cY8UnmTKbdMze1mdphYcmIkvlpfbyyNYeLAQp4qm5ftbI8LByDP_q5AaD_nMFJ8QbNY94A__5LVx4yOit_JxJHWRoUDsycxYNXRf9ysOdz6qiRD2FKQ"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-32 pb-20 px-12 max-w-screen-2xl mx-auto">
+<!-- Hero Section / Header -->
+<header class="mb-12">
+<h1 class="font-headline font-extrabold text-5xl tracking-tight text-on-surface mb-4">Sessions History</h1>
+<p class="text-on-surface-variant text-xl max-w-2xl leading-relaxed">
+                Review and analyze your previous flight data. Track performance, download captures, and manage your mission logs.
+            </p>
+</header>
+<!-- Stats & Filters Row (Aero Glass Style) -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm">
+<span class="block text-xs font-label uppercase tracking-widest text-outline mb-2">Total Missions</span>
+<span class="text-3xl font-headline font-bold text-primary">128</span>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm">
+<span class="block text-xs font-label uppercase tracking-widest text-outline mb-2">Flight Hours</span>
+<span class="text-3xl font-headline font-bold text-primary">42.5h</span>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm">
+<span class="block text-xs font-label uppercase tracking-widest text-outline mb-2">Data Captured</span>
+<span class="text-3xl font-headline font-bold text-primary">1.2 TB</span>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-2 border-primary-container/30 flex items-center justify-between">
+<div>
+<span class="block text-xs font-label uppercase tracking-widest text-outline mb-2">Filter By</span>
+<span class="text-lg font-headline font-bold text-on-surface">All Apps</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">filter_list</span>
+</div>
+</div>
+<!-- Sessions List -->
+<div class="space-y-6">
+<!-- Session Card 1 -->
+<div class="group bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col md:flex-row items-center p-2">
+<div class="w-full md:w-48 h-32 rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Aerial view of industrial site" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsz4jcpplTPfjzhXpJ2GDPmF7CoMh48y5IRPBRH7wPM1w_uCSfwUzQhUDZn9rd4HaVR2QqwuctCmC5qpItjBbv7xUXE80Pr0uBJu1HOYdVGOIUDAhGezDR-F3bRBwJAaonipxoTdGQXCEcxtklQCmFqP_5fZ6lDEZU1hf586oEsXXYUMbfPsJISMnXyqfMDD0ycFceUTyoujDko_5VS8U4eyExU3NFQUxEshYCG9HiiPgq3UYpQw8B8TBPSJx1Vbf9uTDfgzVjRfSY"/>
+</div>
+<div class="flex-grow px-8 py-4 flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="text-[11px] font-label font-bold uppercase tracking-widest text-primary-dim bg-primary-container px-2 py-0.5 rounded-full">Cirro Inspect</span>
+<span class="text-on-surface-variant text-sm font-medium">Oct 24, 2023 • 14:20</span>
+</div>
+<h3 class="text-xl font-headline font-bold text-on-surface">Northern Grid Maintenance</h3>
+<p class="text-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">flight</span>
+                            DJI Matrice 300 RTK
+                        </p>
+</div>
+<div class="flex items-center gap-12">
+<div class="text-right">
+<span class="block text-[11px] font-label uppercase tracking-widest text-outline">Result</span>
+<span class="text-sm font-semibold text-on-surface">342 images captured</span>
+</div>
+<div class="flex items-center gap-3">
+<button class="bg-surface-container-high hover:bg-surface-variant text-on-surface px-4 py-2 rounded-lg text-sm font-medium transition-all active:scale-95 flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">download</span>
+                                Export
+                            </button>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg text-sm font-medium transition-all active:scale-95 flex items-center gap-2">
+                                View Data
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Session Card 2 -->
+<div class="group bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col md:flex-row items-center p-2">
+<div class="w-full md:w-48 h-32 rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Coastal mapping aerial imagery" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD03mlwB_hqhK4uqP2zCqNKVmB4KXgZbPvNUGYCbIy79DdGlJFQVARzgYdpyMRZOOYCZ4oRU_wa-u5a-dKBxiZGoL1t015RVC8JYcbtC56mrpNE3GFsTc6lmoOLeHj_2QPIVDu37B7_rkUMv5plOSFVuc651gi0Mh5lRU2QO7p5Hjo6Gmt77urX6BkA0Dh3GZmom0SOdWWtzsVaWO9ToAIoWrUsShdxxmPVa18_VO5_G0KImRncMx0vM0BGor8PH5ix-KxoZqD8W3zx"/>
+</div>
+<div class="flex-grow px-8 py-4 flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="text-[11px] font-label font-bold uppercase tracking-widest text-tertiary-dim bg-tertiary-container px-2 py-0.5 rounded-full">Cirro Map</span>
+<span class="text-on-surface-variant text-sm font-medium">Oct 22, 2023 • 09:15</span>
+</div>
+<h3 class="text-xl font-headline font-bold text-on-surface">Sunset Ridge Survey</h3>
+<p class="text-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">flight</span>
+                            Autel EVO II Pro
+                        </p>
+</div>
+<div class="flex items-center gap-12">
+<div class="text-right">
+<span class="block text-[11px] font-label uppercase tracking-widest text-outline">Result</span>
+<span class="text-sm font-semibold text-on-surface">1,204 points rendered</span>
+</div>
+<div class="flex items-center gap-3">
+<button class="bg-surface-container-high hover:bg-surface-variant text-on-surface px-4 py-2 rounded-lg text-sm font-medium transition-all active:scale-95 flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">download</span>
+                                Export
+                            </button>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg text-sm font-medium transition-all active:scale-95 flex items-center gap-2">
+                                View Data
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Session Card 3 -->
+<div class="group bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col md:flex-row items-center p-2">
+<div class="w-full md:w-48 h-32 rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Forest canopy monitoring" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQ_EfKOy1_pr7jMJC9-hRZUzbgLjtNMzVRYYj12A_jgsIKuaOHFRBuPHjhsMpQVIbF6gNLFKs2SMCG27zn3LHkg4xuwoFsrQYu983uNJsEYHHeWmVrMtjz7eiIRbMSUmxijcoBLodi7qTcnKZffxLph7pwMV1a78DuLFRpBynVAYJZkLULwzIKL6SttfRnYkSXzkAMi1G1mNajWOGItirjT56CtR5b-XScghZNsG63-xkv9hTQ9Kd4OcifNaGD9N4xmPUp1Y-mfCII"/>
+</div>
+<div class="flex-grow px-8 py-4 flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="text-[11px] font-label font-bold uppercase tracking-widest text-primary-dim bg-primary-container px-2 py-0.5 rounded-full">Cirro Scan</span>
+<span class="text-on-surface-variant text-sm font-medium">Oct 18, 2023 • 11:45</span>
+</div>
+<h3 class="text-xl font-headline font-bold text-on-surface">Evergreen Forest Biomass</h3>
+<p class="text-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">flight</span>
+                            Freefly Astro
+                        </p>
+</div>
+<div class="flex items-center gap-12">
+<div class="text-right">
+<span class="block text-[11px] font-label uppercase tracking-widest text-outline">Result</span>
+<span class="text-sm font-semibold text-on-surface">LiDAR Scan Complete</span>
+</div>
+<div class="flex items-center gap-3">
+<button class="bg-surface-container-high hover:bg-surface-variant text-on-surface px-4 py-2 rounded-lg text-sm font-medium transition-all active:scale-95 flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">download</span>
+                                Export
+                            </button>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg text-sm font-medium transition-all active:scale-95 flex items-center gap-2">
+                                View Data
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Session Card 4 -->
+<div class="group bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col md:flex-row items-center p-2 opacity-80">
+<div class="w-full md:w-48 h-32 rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Urban infrastructure check" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsfLM9MKeWEWWtIMU04SVQwKoSK_Ne1Mlr8SwAN3dLsIEnuUeJlgHNBnTGquQpQ5gcPQr21pR2iojmdc5RDkWB2G92e8IPeFai-pqn2Bi5a0vuAiLrugzauubgI8eEiW46KaHCJIFRaWnrZChp9kZ_Sxu3Sp32QjNf3lW75jZUM7LxAEVPSUKk9XcwQhkj0eRy0m8ma2AcNHLvFO88_IxeBJrXz0LYxYVzOhAC_RwKT7OZweSp-jbQVU1lodRrqK36Jinp8RjN5_oL"/>
+</div>
+<div class="flex-grow px-8 py-4 flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="text-[11px] font-label font-bold uppercase tracking-widest text-on-secondary-fixed-variant bg-secondary-fixed px-2 py-0.5 rounded-full">Cirro Quick</span>
+<span class="text-on-surface-variant text-sm font-medium">Oct 15, 2023 • 16:30</span>
+</div>
+<h3 class="text-xl font-headline font-bold text-on-surface">City Bridge Integrity</h3>
+<p class="text-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">flight</span>
+                            DJI Air 3
+                        </p>
+</div>
+<div class="flex items-center gap-12">
+<div class="text-right">
+<span class="block text-[11px] font-label uppercase tracking-widest text-outline">Result</span>
+<span class="text-sm font-semibold text-on-surface">85 images captured</span>
+</div>
+<div class="flex items-center gap-3">
+<button class="bg-surface-container-high hover:bg-surface-variant text-on-surface px-4 py-2 rounded-lg text-sm font-medium transition-all active:scale-95 flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">download</span>
+                                Export
+                            </button>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg text-sm font-medium transition-all active:scale-95 flex items-center gap-2">
+                                View Data
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination / Load More -->
+<div class="mt-12 flex justify-center">
+<button class="bg-surface-container-high hover:bg-surface-container-highest text-on-surface px-8 py-3 rounded-xl font-semibold transition-all active:scale-95 shadow-sm">
+                Load Older Sessions
+            </button>
+</div>
+</main>
+<!-- SideNavBar (Suppressed for Desktop Focus, but here for Reference Logic) -->
+<!-- Hidden by default on large screens to use TopAppBar as primary -->
+<aside class="hidden h-screen w-64 fixed left-0 top-0 bg-slate-50 dark:bg-slate-950 flex flex-col p-6 gap-8 shadow-xl z-[60]">
+<div class="flex flex-col gap-1">
+<h2 class="text-sm font-inter font-medium tracking-wide uppercase text-slate-500">Pilot Console</h2>
+<p class="text-xs text-outline">Ready for takeoff</p>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 p-3 rounded-xl text-slate-500 hover:bg-slate-200/50 transition-all active:scale-98" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="text-sm font-medium uppercase tracking-wide">Home</span>
+</a>
+<a class="flex items-center gap-3 p-3 rounded-xl text-slate-500 hover:bg-slate-200/50 transition-all active:scale-98" href="#">
+<span class="material-symbols-outlined">apps</span>
+<span class="text-sm font-medium uppercase tracking-wide">Apps</span>
+</a>
+<a class="flex items-center gap-3 p-3 rounded-xl bg-white dark:bg-slate-900 text-sky-700 dark:text-sky-300 shadow-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">flight_takeoff</span>
+<span class="text-sm font-medium uppercase tracking-wide">Sessions</span>
+</a>
+</nav>
+<div class="mt-auto pt-8 flex flex-col gap-2">
+<a class="flex items-center gap-3 p-3 rounded-xl text-slate-500 hover:bg-slate-200/50" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+<a class="flex items-center gap-3 p-3 rounded-xl text-slate-500 hover:bg-slate-200/50" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="text-sm font-medium">Support</span>
+</a>
+</div>
+</aside>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full glass-panel bg-white/80 dark:bg-slate-900/80 px-6 py-4 flex justify-around items-center z-50 shadow-[0_-2px_10px_rgba(0,0,0,0.05)]">
+<button class="flex flex-col items-center gap-1 text-slate-500">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-500">
+<span class="material-symbols-outlined">apps</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Apps</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-sky-700">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">flight_takeoff</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Sessions</span>
+</button>
+</nav>
+</body></html>

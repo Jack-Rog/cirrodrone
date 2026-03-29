@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Publish &amp; Review | Cirro</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed": "#d4e4f6",
+              "surface-container": "#ebeef0",
+              "surface-dim": "#d5dbdd",
+              "tertiary": "#685781",
+              "error-container": "#fa746f",
+              "surface": "#f8f9fa",
+              "on-background": "#2d3335",
+              "background": "#f8f9fa",
+              "outline-variant": "#adb3b5",
+              "surface-tint": "#316482",
+              "inverse-primary": "#a6d8fb",
+              "secondary-dim": "#455564",
+              "primary-fixed-dim": "#98caec",
+              "inverse-on-surface": "#9b9d9e",
+              "on-surface-variant": "#5a6062",
+              "surface-bright": "#f8f9fa",
+              "on-primary-fixed-variant": "#1f5673",
+              "on-tertiary-fixed": "#403158",
+              "surface-variant": "#dee3e6",
+              "on-primary-fixed": "#003851",
+              "on-surface": "#2d3335",
+              "on-tertiary-fixed-variant": "#5d4d76",
+              "tertiary-dim": "#5c4c74",
+              "outline": "#767c7e",
+              "error-dim": "#67040d",
+              "primary-fixed": "#a6d8fb",
+              "surface-container-high": "#e5e9eb",
+              "secondary-container": "#d4e4f6",
+              "tertiary-fixed": "#e3ceff",
+              "on-primary": "#f5f9ff",
+              "secondary-fixed-dim": "#c6d6e8",
+              "on-error-container": "#6e0a12",
+              "on-primary-container": "#124c69",
+              "secondary": "#516170",
+              "on-tertiary-container": "#53436c",
+              "on-tertiary": "#fef7ff",
+              "tertiary-fixed-dim": "#d5c1f1",
+              "surface-container-low": "#f1f4f5",
+              "on-secondary-fixed": "#31414f",
+              "error": "#a83836",
+              "on-secondary-container": "#445362",
+              "primary-dim": "#225876",
+              "primary-container": "#a6d8fb",
+              "on-secondary-fixed-variant": "#4d5d6c",
+              "primary": "#316482",
+              "surface-container-highest": "#dee3e6",
+              "on-secondary": "#f6f9ff",
+              "inverse-surface": "#0c0f10",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-container": "#e3ceff",
+              "on-error": "#fff7f6"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .primary-gradient {
+            background: linear-gradient(135deg, #316482 0%, #225876 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body antialiased">
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md shadow-sm">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-extrabold tracking-tighter text-sky-800">Cirro</span>
+<div class="hidden md:flex gap-6">
+<a class="text-slate-600 hover:text-sky-600 transition-colors" href="#">Apps</a>
+<a class="text-slate-600 hover:text-sky-600 transition-colors" href="#">How it Works</a>
+<a class="text-slate-600 hover:text-sky-600 transition-colors" href="#">Documentation</a>
+<a class="text-sky-700 border-b-2 border-sky-700 pb-1" href="#">Console</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="primary-gradient text-on-primary px-5 py-2 rounded-lg font-semibold active:scale-95 transition-transform shadow-md">Build an App</button>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-8 max-w-7xl mx-auto min-h-screen">
+<!-- Header Section -->
+<header class="mb-12">
+<div class="flex items-center gap-3 mb-4">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Release Candidate v1.0.4</span>
+</div>
+<h1 class="font-headline text-5xl md:text-6xl font-extrabold tracking-tight text-on-surface mb-4 leading-[1.1]">Review &amp; Publish.</h1>
+<p class="text-lg text-on-surface-variant max-w-2xl">Final validation phase complete. Review your deployment status and proceed to the global app marketplace.</p>
+</header>
+<!-- Main Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column: Status Bento -->
+<div class="lg:col-span-8 space-y-8">
+<!-- Status Dashboard Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Repo Linked -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-l-4 border-primary">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">terminal</span>
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+</div>
+<h3 class="font-headline text-xl font-bold text-on-surface">Repo Linked</h3>
+<p class="text-sm text-on-surface-variant mt-1">GitHub connection stable. Main branch synced.</p>
+</div>
+<!-- Build Validated -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-l-4 border-primary">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">package_2</span>
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+</div>
+<h3 class="font-headline text-xl font-bold text-on-surface">Build Validated</h3>
+<p class="text-sm text-on-surface-variant mt-1">Docker image generated and scanned.</p>
+</div>
+<!-- Compatibility Review -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-l-4 border-primary">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">account_tree</span>
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+</div>
+<h3 class="font-headline text-xl font-bold text-on-surface">Compatibility</h3>
+<p class="text-sm text-on-surface-variant mt-1">API endpoints verified across all regions.</p>
+</div>
+</div>
+<!-- Approval State Large Card -->
+<div class="bg-surface-container-low rounded-xl p-8 relative overflow-hidden">
+<div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div class="flex items-center gap-6">
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">pending_actions</span>
+</div>
+<div>
+<h2 class="font-headline text-2xl font-bold text-on-surface">Approval State</h2>
+<p class="text-on-surface-variant">Your application is currently <span class="text-primary font-semibold">Pending Review</span> by the safety council.</p>
+</div>
+</div>
+<div class="flex flex-col gap-1 items-end">
+<span class="text-xs uppercase tracking-widest font-bold text-on-surface-variant">Est. Time Remaining</span>
+<span class="text-3xl font-headline font-bold text-on-surface">14h 22m</span>
+</div>
+</div>
+</div>
+<!-- Next Steps / Checklist -->
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-sm">
+<h2 class="font-headline text-2xl font-bold mb-6">Professional Next Steps</h2>
+<div class="space-y-6">
+<div class="flex gap-4">
+<div class="flex-shrink-0 w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-sm">1</div>
+<div>
+<h4 class="font-bold text-on-surface">Configure Environment Variables</h4>
+<p class="text-on-surface-variant text-sm">Ensure all production secrets are updated before the final push to the live cluster.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="flex-shrink-0 w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-sm">2</div>
+<div>
+<h4 class="font-bold text-on-surface">Region Availability Check</h4>
+<p class="text-on-surface-variant text-sm">Review data residency requirements for EU-Central-1 and US-East-2 regions.</p>
+</div>
+</div>
+<div class="flex gap-4 text-outline">
+<div class="flex-shrink-0 w-8 h-8 rounded-full bg-surface-container flex items-center justify-center font-bold text-sm">3</div>
+<div>
+<h4 class="font-bold">Public Marketplace Indexing</h4>
+<p class="text-sm">Metadata will be automatically generated from your README.md file upon publishing.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Actions & Details -->
+<div class="lg:col-span-4 space-y-8">
+<!-- Action Card -->
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-md border border-surface-variant">
+<h3 class="font-headline text-xl font-bold mb-6">Deployment Actions</h3>
+<div class="space-y-4">
+<button class="w-full primary-gradient text-on-primary py-4 rounded-lg font-bold flex items-center justify-center gap-2 shadow-lg active:scale-95 transition-transform">
+<span class="material-symbols-outlined">rocket_launch</span>
+                            Publish to Store
+                        </button>
+<button class="w-full bg-surface-container-high text-on-surface py-4 rounded-lg font-bold flex items-center justify-center gap-2 hover:bg-surface-dim transition-colors active:scale-95">
+<span class="material-symbols-outlined">labs</span>
+                            Internal Beta Testing
+                        </button>
+</div>
+<p class="text-[11px] text-center mt-6 text-on-surface-variant uppercase tracking-widest leading-relaxed">
+                        By publishing, you agree to the <a class="underline" href="#">Developer Terms of Service</a> and automated safety scans.
+                    </p>
+</div>
+<!-- App Details Summary -->
+<div class="bg-surface-container-low rounded-xl p-8">
+<h3 class="font-headline text-lg font-bold mb-4">Summary</h3>
+<div class="space-y-4 text-sm">
+<div class="flex justify-between py-2 border-b border-surface-variant/50">
+<span class="text-on-surface-variant">Package Name</span>
+<span class="font-mono text-on-surface font-semibold">com.cirro.aero.v1</span>
+</div>
+<div class="flex justify-between py-2 border-b border-surface-variant/50">
+<span class="text-on-surface-variant">Dependencies</span>
+<span class="text-on-surface font-semibold">14 verified</span>
+</div>
+<div class="flex justify-between py-2 border-b border-surface-variant/50">
+<span class="text-on-surface-variant">Size</span>
+<span class="text-on-surface font-semibold">42.8 MB</span>
+</div>
+<div class="flex justify-between py-2">
+<span class="text-on-surface-variant">Last Scan</span>
+<span class="text-on-surface font-semibold">2 mins ago</span>
+</div>
+</div>
+</div>
+<!-- Preview Card -->
+<div class="relative group cursor-pointer overflow-hidden rounded-xl shadow-xl">
+<img class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Aerial drone perspective of a modern tech campus" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSK1z_Ik0nS-6LXw8B0GXr7_aTDvEFOaqcsGGFRgVZNGp3dXMu4QabZyejcu2apEo5p2IncG3MSTgMyR9lshgBkOitwScHcGp-4z6FxUn-sk93_Rsyy5RKtnO0FP1oCrYRtkPHO0D1SZo6wVYU2yJJf6CxBjiuyZ3TuBHd1YN5fZNze1ULo10pZuPi5EbGPQ72Au5hy9FeLXu7ToDeIqs0VW9XysMe-RVO6J39TnXvzU7oubC2zmbg8aH8Gs8yCxzUNdpG1Ym_DC9G"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex flex-col justify-end p-6">
+<span class="text-white/80 text-[11px] uppercase tracking-widest font-bold">Marketplace Preview</span>
+<h4 class="text-white font-headline text-lg font-bold">Horizon Eye v1.0</h4>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Site Footer Shell -->
+<footer class="bg-slate-50 border-t border-slate-200">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 px-8 py-12 max-w-7xl mx-auto">
+<div class="col-span-2 md:col-span-1">
+<span class="font-headline font-bold text-slate-800 text-xl block mb-4">Cirro</span>
+<p class="text-sm text-slate-500">Autonomous flight systems for the next decade of infrastructure.</p>
+</div>
+<div class="flex flex-col gap-3">
+<span class="font-bold text-slate-800 text-sm mb-2">Product</span>
+<a class="text-slate-500 hover:text-sky-500 transition-all text-sm" href="#">Documentation</a>
+<a class="text-slate-500 hover:text-sky-500 transition-all text-sm" href="#">API Reference</a>
+<a class="text-slate-500 hover:text-sky-500 transition-all text-sm" href="#">Status</a>
+</div>
+<div class="flex flex-col gap-3">
+<span class="font-bold text-slate-800 text-sm mb-2">Resources</span>
+<a class="text-slate-500 hover:text-sky-500 transition-all text-sm" href="#">Community</a>
+<a class="text-slate-500 hover:text-sky-500 transition-all text-sm" href="#">Support</a>
+<a class="text-slate-500 hover:text-sky-500 transition-all text-sm" href="#">Terms of Service</a>
+</div>
+<div class="flex flex-col gap-3">
+<span class="font-bold text-slate-800 text-sm mb-2">Legal</span>
+<a class="text-slate-500 hover:text-sky-500 transition-all text-sm" href="#">Privacy Policy</a>
+<div class="mt-4">
+<p class="text-[11px] text-slate-400">© 2024 Cirro Drones. All rights reserved.</p>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

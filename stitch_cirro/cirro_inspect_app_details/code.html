@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-fixed-variant": "#5d4d76",
+              "surface-container-high": "#e5e9eb",
+              "on-secondary-fixed-variant": "#4d5d6c",
+              "inverse-on-surface": "#9b9d9e",
+              "tertiary-dim": "#5c4c74",
+              "secondary-fixed-dim": "#c6d6e8",
+              "on-error": "#fff7f6",
+              "outline": "#767c7e",
+              "surface-container-highest": "#dee3e6",
+              "surface-dim": "#d5dbdd",
+              "tertiary": "#685781",
+              "surface-container": "#ebeef0",
+              "on-primary": "#f5f9ff",
+              "on-tertiary-fixed": "#403158",
+              "inverse-primary": "#a6d8fb",
+              "primary-dim": "#225876",
+              "error-container": "#fa746f",
+              "on-tertiary": "#fef7ff",
+              "on-primary-container": "#124c69",
+              "primary-fixed-dim": "#98caec",
+              "secondary": "#516170",
+              "on-secondary": "#f6f9ff",
+              "on-primary-fixed": "#003851",
+              "on-surface": "#2d3335",
+              "background": "#f8f9fa",
+              "on-secondary-container": "#445362",
+              "secondary-fixed": "#d4e4f6",
+              "secondary-dim": "#455564",
+              "primary": "#316482",
+              "error": "#a83836",
+              "surface-bright": "#f8f9fa",
+              "surface-tint": "#316482",
+              "on-background": "#2d3335",
+              "primary-fixed": "#a6d8fb",
+              "primary-container": "#a6d8fb",
+              "tertiary-fixed": "#e3ceff",
+              "surface-container-lowest": "#ffffff",
+              "inverse-surface": "#0c0f10",
+              "secondary-container": "#d4e4f6",
+              "surface-container-low": "#f1f4f5",
+              "on-tertiary-container": "#53436c",
+              "tertiary-fixed-dim": "#d5c1f1",
+              "surface-variant": "#dee3e6",
+              "error-dim": "#67040d",
+              "on-surface-variant": "#5a6062",
+              "outline-variant": "#adb3b5"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .primary-gradient {
+            background: linear-gradient(135deg, #316482 0%, #225876 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm no-line">
+<div class="flex justify-between items-center h-20 px-12 w-full max-w-screen-2xl mx-auto">
+<div class="text-2xl font-extrabold tracking-tighter text-sky-800 dark:text-sky-100 font-headline">Cirro</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="font-manrope font-bold tracking-tight leading-[1.1] text-lg text-slate-500 dark:text-slate-400 hover:text-sky-600 transition-all active:scale-95" href="#">Home</a>
+<a class="font-manrope font-bold tracking-tight leading-[1.1] text-lg text-sky-700 dark:text-sky-400 border-b-2 border-sky-700 dark:border-sky-400 pb-1 transition-all active:scale-95" href="#">Apps</a>
+<a class="font-manrope font-bold tracking-tight leading-[1.1] text-lg text-slate-500 dark:text-slate-400 hover:text-sky-600 transition-all active:scale-95" href="#">Sessions</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="primary-gradient text-on-primary px-6 py-2.5 rounded-lg font-headline font-bold text-sm tracking-tight transition-all active:scale-95 shadow-md">
+                    Connect Drone
+                </button>
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border border-outline-variant/10">
+<img alt="User Profile" data-alt="Professional pilot headshot profile picture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBz4f4uvlf7gGczV6jcrfMT3f386e0mG_c6_Pm-Y8feTE3xBMDPPgMEem_8WX48K7ScNa4O1xrzi5wFn0t6qjn87slXZV8XOfNq2jIB5fnrlc9OhmzQN9FNyce86suVugUDoDGfs6_o1HFuGEmFlEI6-YHuuaIdxzBOQOjiZ3f4Ex_-VPoNm6eN2oU5JyxR9ESKzGiaEQ7RuCgi8xewA27kThtJwqn7rTvU2UsxIqQ2Vpe49N3OvqpEECpg5hjBjIZCp0ullPs2xnHh"/>
+</div>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-12 max-w-screen-2xl mx-auto">
+<!-- Hero Section / App Identity -->
+<header class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end mb-20">
+<div class="lg:col-span-8">
+<div class="flex items-center gap-4 mb-6">
+<span class="bg-secondary-container text-on-secondary-container px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase">Precision Tool</span>
+<span class="flex items-center gap-1 text-on-surface-variant text-sm font-medium">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                        Compatible with DJI Mavic 3
+                    </span>
+</div>
+<h1 class="font-headline text-6xl md:text-7xl font-extrabold tracking-tighter leading-[1.05] text-on-surface mb-6">
+                    Cirro Inspect
+                </h1>
+<p class="text-xl md:text-2xl text-on-surface-variant max-w-2xl leading-relaxed">
+                    Automated high-fidelity visual inspections for critical infrastructure. Transform raw telemetry into actionable structural insights.
+                </p>
+</div>
+<div class="lg:col-span-4 flex flex-col gap-4">
+<button class="primary-gradient text-white w-full py-5 rounded-xl font-headline font-extrabold text-xl tracking-tight shadow-xl hover:shadow-2xl transition-all active:scale-95 flex items-center justify-center gap-3">
+<span class="material-symbols-outlined">rocket_launch</span>
+                    Launch App
+                </button>
+<button class="bg-surface-container-high text-on-surface w-full py-5 rounded-xl font-headline font-bold text-lg tracking-tight hover:bg-surface-container-highest transition-all active:scale-95">
+                    View Documentation
+                </button>
+</div>
+</header>
+<!-- Product Gallery / Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-24">
+<!-- Main Preview Card -->
+<div class="md:col-span-8 h-[500px] rounded-xl overflow-hidden relative shadow-lg group">
+<img alt="Roof Inspection" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="High angle thermal view of a commercial roof inspection" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2szV-pbekfYAMelnUFVFll9roi6WAUm3rZmRWL90nOEjCXwMChzLvIKp6a8kl1Tq-xEdSWMl3gkQomYzxs6KIsVYrWw6ZPsHDTiaLvwbwakXx1ry_A7jpdXE0MfX2QrZTDoNH4m-pVt23WKIQqACiXbBjY7CrSCKPZ2TiqRiyg4ANgqSYbiwpPa3pj_vo6t5mySBcYtymP_ClTr6oGHM-qHVWRWxuDbSP5cviAnhoZYam3xfDTgncaqvmuPpHfelpfbKD_hUKDg_t"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex flex-col justify-end p-10">
+<h3 class="text-white font-headline text-3xl font-bold mb-2">Automated Roof Analysis</h3>
+<p class="text-white/80 text-lg max-w-md">Identify moisture traps and structural weaknesses using AI-driven thermal mapping.</p>
+</div>
+<div class="absolute top-6 right-6 glass-panel bg-white/20 p-4 rounded-xl border border-white/30 text-white">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">thermostat</span>
+<span class="font-bold">Thermal Active</span>
+</div>
+</div>
+</div>
+<!-- Secondary Grid Stack -->
+<div class="md:col-span-4 flex flex-col gap-6">
+<!-- Fence Line Card -->
+<div class="h-[238px] rounded-xl overflow-hidden relative shadow-md group">
+<img alt="Fence line checks" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Close up of a smart drone flying along a security perimeter fence" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4U52HBwgukXJ8wsK3KZlfGn71dHBKX9sgAYPKBVFZh7ETf4_R-u_n4GdZFHcvRco-YXOqoYXE4YLNoeZNcv4tl8fXk-HSfOKk3uigXDvFlz6obD1ckCeNoqIyZV7w7SA9_A_7ZB_URTgyGWrEKedCsFa9t-4WOVTsOrD72PrcsUCqT3coC3AtpXYDWDm3wTQ0dXcKPvZllbHPC-rkhJkLtfCaPlUNeRQR1XD-rfiH7oWVSe814genZ6SZzC5vynS7qqzsowaRjCkl"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex flex-col justify-end p-6">
+<h4 class="text-white font-headline text-xl font-bold">Perimeter Security</h4>
+</div>
+</div>
+<!-- Building Exterior Card -->
+<div class="h-[238px] rounded-xl overflow-hidden relative shadow-md group">
+<img alt="Building exterior capture" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Drone's eye view of a glass skyscraper facade inspection" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCERzqS9WwhnCZZTqwbG2sm_G0T_x6ZfMe1wmpYxhIGRTsPOgOz1kingCEJM7TYV_a1JIinNjRlgkb4DV__wViZHqiEgzVqgUIolYQzdMjOGf1_CGYO8i3dA_IkKaOf5dket_eMd0r0VdU6g04egvwy6NL8so1aRXf29WMD_llIWZxgJcK5VhkLpAxNGQ-gCFyzcjbwPZnu8GBOUHw1BBWG2M_36dLlsjdAw1BE53u98t3Uy0Veq2THjO8RkMfHF60RYlg3jk2KG4HN"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex flex-col justify-end p-6">
+<h4 class="text-white font-headline text-xl font-bold">Facade Digitization</h4>
+</div>
+</div>
+</div>
+</section>
+<!-- Detailed Specifications -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-16 border-t border-outline-variant/10 pt-16">
+<div class="space-y-6">
+<h2 class="font-headline text-3xl font-extrabold tracking-tight text-on-surface">The Intelligence</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed">
+                    Cirro Inspect uses advanced computer vision to identify over 45 types of structural anomalies. From hairline cracks in concrete to micro-corrosion on steel supports, nothing escapes the lens.
+                </p>
+<div class="flex flex-col gap-4">
+<div class="flex items-start gap-4 p-4 rounded-xl bg-surface-container-low">
+<span class="material-symbols-outlined text-primary p-2 bg-white rounded-lg shadow-sm">precision_manufacturing</span>
+<div>
+<p class="font-bold text-on-surface">Sub-millimeter Accuracy</p>
+<p class="text-sm text-on-surface-variant">Precision GPS tagging for every frame captured.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<h2 class="font-headline text-3xl font-extrabold tracking-tight text-on-surface">Deployment</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed">
+                    Designed for field operations. One-tap deployment allows pilots to focus on safety while Cirro handles the complex flight paths and data acquisition.
+                </p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-bold text-on-surface-variant">4K 60FPS</span>
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-bold text-on-surface-variant">LIDAR READY</span>
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-bold text-on-surface-variant">RTK SUPPORT</span>
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-bold text-on-surface-variant">OFFLINE SYNC</span>
+</div>
+</div>
+<div class="space-y-6">
+<h2 class="font-headline text-3xl font-extrabold tracking-tight text-on-surface">Integrations</h2>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-6 rounded-xl bg-surface-container-lowest shadow-sm border border-outline-variant/5 text-center">
+<div class="h-10 w-10 mx-auto mb-3 bg-primary/5 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">cloud_done</span>
+</div>
+<p class="font-bold text-sm">Azure Cloud</p>
+</div>
+<div class="p-6 rounded-xl bg-surface-container-lowest shadow-sm border border-outline-variant/5 text-center">
+<div class="h-10 w-10 mx-auto mb-3 bg-primary/5 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">dataset</span>
+</div>
+<p class="font-bold text-sm">Autodesk</p>
+</div>
+<div class="p-6 rounded-xl bg-surface-container-lowest shadow-sm border border-outline-variant/5 text-center">
+<div class="h-10 w-10 mx-auto mb-3 bg-primary/5 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">folder_shared</span>
+</div>
+<p class="font-bold text-sm">SharePoint</p>
+</div>
+<div class="p-6 rounded-xl bg-surface-container-lowest shadow-sm border border-outline-variant/5 text-center">
+<div class="h-10 w-10 mx-auto mb-3 bg-primary/5 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">analytics</span>
+</div>
+<p class="font-bold text-sm">Tableau</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Contextual Footer (Back to Apps) -->
+<footer class="bg-surface-container-low py-12 px-12 mt-12">
+<div class="max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-6">
+<span class="text-3xl font-extrabold tracking-tighter text-sky-800/40 font-headline">Cirro</span>
+<p class="text-on-surface-variant text-sm">© 2024 Cirro Aerospace. All rights reserved.</p>
+</div>
+<div class="flex gap-10">
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="#">Support</a>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cirro | Live Mission</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-fixed-variant": "#5d4d76",
+              "surface-container-high": "#e5e9eb",
+              "on-secondary-fixed-variant": "#4d5d6c",
+              "inverse-on-surface": "#9b9d9e",
+              "tertiary-dim": "#5c4c74",
+              "secondary-fixed-dim": "#c6d6e8",
+              "on-error": "#fff7f6",
+              "outline": "#767c7e",
+              "surface-container-highest": "#dee3e6",
+              "surface-dim": "#d5dbdd",
+              "tertiary": "#685781",
+              "surface-container": "#ebeef0",
+              "on-primary": "#f5f9ff",
+              "on-tertiary-fixed": "#403158",
+              "inverse-primary": "#a6d8fb",
+              "primary-dim": "#225876",
+              "error-container": "#fa746f",
+              "on-tertiary": "#fef7ff",
+              "on-primary-container": "#124c69",
+              "primary-fixed-dim": "#98caec",
+              "secondary": "#516170",
+              "on-secondary": "#f6f9ff",
+              "on-primary-fixed": "#003851",
+              "on-surface": "#2d3335",
+              "background": "#f8f9fa",
+              "on-secondary-container": "#445362",
+              "secondary-fixed": "#d4e4f6",
+              "secondary-dim": "#455564",
+              "primary": "#316482",
+              "error": "#a83836",
+              "surface-bright": "#f8f9fa",
+              "surface-tint": "#316482",
+              "on-background": "#2d3335",
+              "primary-fixed": "#a6d8fb",
+              "primary-container": "#a6d8fb",
+              "tertiary-fixed": "#e3ceff",
+              "surface-container-lowest": "#ffffff",
+              "inverse-surface": "#0c0f10",
+              "secondary-container": "#d4e4f6",
+              "surface-container-low": "#f1f4f5",
+              "on-tertiary-container": "#53436c",
+              "tertiary-fixed-dim": "#d5c1f1",
+              "surface": "#f8f9fa",
+              "on-error-container": "#6e0a12",
+              "surface-variant": "#dee3e6",
+              "error-dim": "#67040d",
+              "on-surface-variant": "#5a6062",
+              "outline-variant": "#adb3b5"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .primary-gradient {
+            background: linear-gradient(135deg, #316482 0%, #225876 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body overflow-hidden">
+<!-- TopNavBar (Shared Component) -->
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm no-line">
+<div class="flex justify-between items-center h-20 px-12 w-full max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-extrabold tracking-tighter text-sky-800 dark:text-sky-100">Cirro</span>
+<nav class="hidden md:flex gap-6">
+<a class="font-manrope font-bold tracking-tight leading-[1.1] text-lg text-slate-500 dark:text-slate-400 hover:text-sky-600 transition-all active:scale-95" href="#">Home</a>
+<a class="font-manrope font-bold tracking-tight leading-[1.1] text-lg text-slate-500 dark:text-slate-400 hover:text-sky-600 transition-all active:scale-95" href="#">Apps</a>
+<a class="font-manrope font-bold tracking-tight leading-[1.1] text-lg text-sky-700 dark:text-sky-400 border-b-2 border-sky-700 dark:border-sky-400 pb-1 transition-all active:scale-95" href="#">Sessions</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="px-6 py-2.5 rounded-lg primary-gradient text-white font-manrope font-bold text-sm tracking-tight hover:shadow-md transition-all active:scale-95">
+                    Connect Drone
+                </button>
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Close up professional portrait of a pilot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5Wdacqd-NBYay42IMfIpyZs1ksv-yAy-D31miW7CDVCdVbWXvwvfB5W3qPNI2Il03uMnV9d65nYmp6mFEdqHufVpBvUDmuTR3Up1muTBQ4r28J_nkKTU5OHjLjQOdL9Tci2pwUjHAaX5WlQBhYuqXqyvxyhssBSXgN39FQbj0VloRELCnMr6e6IlSSDj-68q8JjxM_uosBdhI_wfFn5sE6pNNUAvSHBYuFhPB75s9mbyW3q7InA1C2HzuWaO-2GIvK12CDaKZN1Ht"/>
+</div>
+</div>
+</div>
+</header>
+<main class="relative h-screen w-screen pt-20">
+<!-- Full-screen Map Layer -->
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="Satellite map view of coastal terrain with grid overlays" data-location="Northern Coastal Highlands" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDe0mgfO4FAJMrjsKjLh4E0fKkDiWB1NkdXBA96de0lHly2jgQCjuA5Y3aStySm40rPb-VLGMr-nQDMpWuE2IJhEPztRM54iDq5yQ67lD2qJui8ZqhRGbQFvdIJlz6a_8zlXeog7QYh6rpBiNTiYT4eefvGkHdCXIB2_mHC3pRVx6qchjLL8E6b1fQ_ei1SXc31AHljyuV6fCzO5K4YRG_yFoKqmECfPC-T_0RwccaRpAUVexGYUXa34Ndbp-6W1qIpj6PDKBsISDaP"/>
+<!-- Simulated Drone Path & Marker -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none" preserveaspectratio="none" viewbox="0 0 1000 1000">
+<path class="opacity-60" d="M 200 800 L 400 600 L 450 450" fill="none" stroke="#316482" stroke-dasharray="12 8" stroke-width="4"></path>
+<circle cx="450" cy="450" fill="#316482" r="8"></circle>
+<circle cx="450" cy="450" fill="none" r="16" stroke="#316482" stroke-width="2">
+<animate attributename="r" dur="2s" from="8" repeatcount="indefinite" to="24"></animate>
+<animate attributename="opacity" dur="2s" from="1" repeatcount="indefinite" to="0"></animate>
+</circle>
+</svg>
+</div>
+<!-- Floating UI Overlays -->
+<div class="relative z-10 flex flex-col h-full pointer-events-none p-8">
+<!-- Top Status Bar -->
+<div class="flex justify-between items-start pointer-events-auto">
+<div class="glass-panel p-6 rounded-xl shadow-md flex items-center gap-8 border-none">
+<div class="flex flex-col gap-1">
+<span class="text-[11px] font-medium tracking-[0.15em] uppercase text-on-surface-variant">Mission Status</span>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-headline font-bold text-xl tracking-tight text-primary">Active Run</span>
+</div>
+</div>
+<div class="w-[1px] h-10 bg-outline-variant/20"></div>
+<div class="flex flex-col gap-1">
+<span class="text-[11px] font-medium tracking-[0.15em] uppercase text-on-surface-variant">Altitude</span>
+<span class="font-headline font-bold text-xl tracking-tight">142m</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-[11px] font-medium tracking-[0.15em] uppercase text-on-surface-variant">Battery</span>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="battery_horiz_075">battery_horiz_075</span>
+<span class="font-headline font-bold text-xl tracking-tight">78%</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-[11px] font-medium tracking-[0.15em] uppercase text-on-surface-variant">Signal</span>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="signal_cellular_4_bar">signal_cellular_4_bar</span>
+<span class="font-headline font-bold text-xl tracking-tight">Excellent</span>
+</div>
+</div>
+</div>
+<div class="glass-panel p-2 rounded-xl shadow-md flex flex-col gap-2 pointer-events-auto">
+<button class="p-3 hover:bg-surface-container-high rounded-lg transition-all active:scale-95">
+<span class="material-symbols-outlined text-on-surface" data-icon="layers">layers</span>
+</button>
+<button class="p-3 hover:bg-surface-container-high rounded-lg transition-all active:scale-95">
+<span class="material-symbols-outlined text-on-surface" data-icon="my_location">my_location</span>
+</button>
+<button class="p-3 hover:bg-surface-container-high rounded-lg transition-all active:scale-95">
+<span class="material-symbols-outlined text-on-surface" data-icon="add">add</span>
+</button>
+<button class="p-3 hover:bg-surface-container-high rounded-lg transition-all active:scale-95">
+<span class="material-symbols-outlined text-on-surface" data-icon="remove">remove</span>
+</button>
+</div>
+</div>
+<div class="mt-auto flex justify-between items-end">
+<!-- Expandable Video Feed -->
+<div class="glass-panel p-1.5 rounded-xl shadow-xl w-80 aspect-video overflow-hidden group pointer-events-auto border-none transition-all hover:w-[480px]">
+<div class="relative w-full h-full rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Drone camera POV showing mountains and clouds" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOU0LYBfpVR2C6rKkw7HjIDNwWmxNA7l2sgHia-Xfg3YGLNmWcg-5gtPQmqwRSqU-Nk-zvc0FuIoNqF0hXBTc9HiAP5eS79Dll29T6JW8jBGEVUlXm8hc4wJcDMbrDJiGQSugnf2GpoCQ4oFqLuRbgOlX8CZzG7-tmEtOew_nqL5u2gEqgxTpd3-UBEK8bZOgzUeKfsvr5rc5vMi8T-jfqHCRuM9_XDOdQUf7k62HeTvNtuW52btmKvxkYDh3svXrnP3X6N7pyWMcR"/>
+<div class="absolute top-4 left-4 bg-error text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">Live</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4 flex justify-between items-center">
+<span class="text-white text-xs font-medium">Main Gimbal Feed</span>
+<span class="material-symbols-outlined text-white text-sm" data-icon="open_in_full">open_in_full</span>
+</div>
+</div>
+</div>
+<!-- Execution Controls -->
+<div class="flex flex-col items-center gap-6 pointer-events-auto">
+<div class="glass-panel px-8 py-6 rounded-2xl shadow-2xl flex flex-col gap-6 w-[420px] border-none">
+<div class="space-y-3">
+<div class="flex justify-between items-end">
+<span class="text-xs font-semibold uppercase tracking-widest text-on-surface-variant">Mission Progress</span>
+<span class="font-headline font-extrabold text-2xl text-primary">45%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full transition-all duration-1000" style="width: 45%;"></div>
+</div>
+<div class="flex justify-between text-[11px] text-on-surface-variant font-medium">
+<span>2.4 KM Traveled</span>
+<span>12:45 Remaining</span>
+</div>
+</div>
+<div class="flex gap-3 h-14">
+<button class="flex-1 flex items-center justify-center gap-2 bg-surface-container-high text-on-surface font-manrope font-bold rounded-xl hover:bg-surface-container-highest transition-all active:scale-95">
+<span class="material-symbols-outlined" data-icon="pause_circle">pause_circle</span>
+                                Pause
+                            </button>
+<button class="w-14 h-14 flex items-center justify-center bg-error-container text-on-error-container rounded-xl hover:bg-error-container/80 transition-all active:scale-95 group">
+<span class="material-symbols-outlined" data-icon="cancel">cancel</span>
+<span class="absolute -top-10 scale-0 group-hover:scale-100 bg-error text-white text-[10px] px-2 py-1 rounded transition-all">Abort Mission</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Placeholder for balance/symmetry -->
+<div class="w-80 h-1"></div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Suppression for Task-Focused Screens -->
+<!-- (Suppressed as per "The Destination Rule" for Transactional/Focused journeys) -->
+</body></html>

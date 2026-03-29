@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cirro | Developer Portal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed": "#d4e4f6",
+              "surface-container": "#ebeef0",
+              "surface-dim": "#d5dbdd",
+              "tertiary": "#685781",
+              "error-container": "#fa746f",
+              "surface": "#f8f9fa",
+              "on-background": "#2d3335",
+              "background": "#f8f9fa",
+              "outline-variant": "#adb3b5",
+              "surface-tint": "#316482",
+              "inverse-primary": "#a6d8fb",
+              "secondary-dim": "#455564",
+              "primary-fixed-dim": "#98caec",
+              "inverse-on-surface": "#9b9d9e",
+              "on-surface-variant": "#5a6062",
+              "surface-bright": "#f8f9fa",
+              "on-primary-fixed-variant": "#1f5673",
+              "on-tertiary-fixed": "#403158",
+              "surface-variant": "#dee3e6",
+              "on-primary-fixed": "#003851",
+              "on-surface": "#2d3335",
+              "on-tertiary-fixed-variant": "#5d4d76",
+              "tertiary-dim": "#5c4c74",
+              "outline": "#767c7e",
+              "error-dim": "#67040d",
+              "primary-fixed": "#a6d8fb",
+              "surface-container-high": "#e5e9eb",
+              "secondary-container": "#d4e4f6",
+              "tertiary-fixed": "#e3ceff",
+              "on-primary": "#f5f9ff",
+              "secondary-fixed-dim": "#c6d6e8",
+              "on-error-container": "#6e0a12",
+              "on-primary-container": "#124c69",
+              "secondary": "#516170",
+              "on-tertiary-container": "#53436c",
+              "on-tertiary": "#fef7ff",
+              "tertiary-fixed-dim": "#d5c1f1",
+              "surface-container-low": "#f1f4f5",
+              "on-secondary-fixed": "#31414f",
+              "error": "#a83836",
+              "on-secondary-container": "#445362",
+              "primary-dim": "#225876",
+              "primary-container": "#a6d8fb",
+              "on-secondary-fixed-variant": "#4d5d6c",
+              "primary": "#316482",
+              "surface-container-highest": "#dee3e6",
+              "on-secondary": "#f6f9ff",
+              "inverse-surface": "#0c0f10",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-container": "#e3ceff",
+              "on-error": "#fff7f6"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "3xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .primary-gradient {
+            background: linear-gradient(135deg, #316482 0%, #225876 100%);
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+            color: #2d3335;
+        }
+        h1, h2, h3 {
+            font-family: 'Manrope', sans-serif;
+            letter-spacing: -0.02em;
+        }
+        .hero-text-glow {
+            text-shadow: 0 0 40px rgba(49, 100, 130, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased selection:bg-primary selection:text-white">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-xl border-b border-white/20">
+<div class="flex justify-between items-center w-full px-12 py-5 max-w-[1440px] mx-auto">
+<div class="flex items-center gap-16">
+<span class="text-3xl font-extrabold tracking-tighter font-headline text-primary">Cirro</span>
+<div class="hidden md:flex gap-10 items-center">
+<a class="text-on-surface-variant hover:text-primary transition-all font-headline font-bold text-sm tracking-tight" href="#">Apps</a>
+<a class="text-on-surface-variant hover:text-primary transition-all font-headline font-bold text-sm tracking-tight" href="#{{DATA:SCREEN:SCREEN_4}}">How it Works</a>
+<a class="text-primary border-b-2 border-primary pb-1 font-headline font-bold text-sm tracking-tight" href="#">Documentation</a>
+<a class="text-on-surface-variant hover:text-primary transition-all font-headline font-bold text-sm tracking-tight" href="#">Console</a>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden lg:block relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-lg">search</span>
+<input class="bg-surface-container border-none rounded-full py-2.5 pl-12 pr-6 text-sm w-72 focus:ring-2 focus:ring-primary transition-all" placeholder="Search developer docs..." type="text"/>
+</div>
+<button class="primary-gradient text-on-primary px-8 py-2.5 rounded-full font-headline font-bold text-sm hover:shadow-lg hover:shadow-primary/20 active:scale-95 transition-all" onclick="window.location.href='#{{DATA:SCREEN:SCREEN_3}}'">
+                Build an App
+            </button>
+</div>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="max-w-[1440px] mx-auto px-12 pt-48 pb-32 flex flex-col items-center text-center relative overflow-hidden">
+<div class="absolute top-20 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/5 blur-[120px] rounded-full -z-10"></div>
+<span class="inline-block px-5 py-2 rounded-full bg-secondary-container/50 border border-secondary-container text-on-secondary-container text-[11px] font-extrabold tracking-[0.2em] uppercase mb-10">Developer Ecosystem</span>
+<h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter leading-[1.05] text-on-surface mb-10 max-w-5xl hero-text-glow">
+            Build for the App Store <br class="hidden md:block"/> for Drones.
+        </h1>
+<p class="text-xl md:text-2xl text-on-surface-variant max-w-3xl mb-14 leading-relaxed font-medium">
+            One codebase. Infinite missions. Cirro handles the complex runtime and mission execution across the industry's leading hardware fleet.
+        </p>
+<div class="flex flex-col sm:flex-row gap-6">
+<button class="primary-gradient text-on-primary px-12 py-5 rounded-xl font-headline font-bold text-lg shadow-2xl shadow-primary/30 hover:shadow-primary/40 active:scale-95 transition-all" onclick="window.location.href='#{{DATA:SCREEN:SCREEN_3}}'">
+                Start Building
+            </button>
+<button class="bg-surface-container-highest/50 backdrop-blur-md text-on-surface px-12 py-5 rounded-xl font-headline font-bold text-lg border border-outline-variant/30 hover:bg-surface-container-highest transition-all active:scale-95" onclick="window.location.href='#{{DATA:SCREEN:SCREEN_4}}'">Read Documentation</button>
+</div>
+</section>
+<!-- Product Diagram Section -->
+<section class="bg-white py-32 border-y border-outline-variant/10">
+<div class="max-w-[1440px] mx-auto px-12">
+<div class="text-center mb-28">
+<h2 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-8">Architected for Interoperability</h2>
+<p class="text-on-surface-variant text-xl max-w-2xl mx-auto font-medium">Eliminate hardware-specific silos. Write your mission logic once and deploy it to any supported platform with native-level performance.</p>
+</div>
+<div class="relative grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
+<!-- Step 1: Developer App -->
+<div class="glass-card p-10 rounded-3xl shadow-2xl shadow-black/[0.03] border-t-8 border-primary group hover:-translate-y-2 transition-transform duration-500">
+<div class="w-16 h-16 rounded-2xl bg-primary-container flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-primary text-3xl">code</span>
+</div>
+<h3 class="text-2xl font-bold mb-4">Developer App</h3>
+<p class="text-base text-on-surface-variant mb-8 leading-relaxed">Build rich flight interfaces using our High-Level SDK. Control telemetry, imaging, and mission triggers with zero hardware headache.</p>
+<div class="flex flex-wrap gap-3">
+<span class="px-4 py-1.5 bg-surface-variant/50 rounded-lg text-[11px] font-bold tracking-wider">REACT</span>
+<span class="px-4 py-1.5 bg-surface-variant/50 rounded-lg text-[11px] font-bold tracking-wider">SWIFT</span>
+<span class="px-4 py-1.5 bg-surface-variant/50 rounded-lg text-[11px] font-bold tracking-wider">KOTLIN</span>
+</div>
+</div>
+<!-- Step 2: Cirro Runtime (Centerpiece) -->
+<div class="primary-gradient p-12 rounded-[2.5rem] shadow-2xl relative z-10 transform md:scale-110 group transition-all duration-500">
+<div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-on-primary-container text-white text-[11px] font-black px-5 py-1.5 rounded-full tracking-[0.2em] uppercase">Core Engine</div>
+<div class="w-20 h-20 rounded-3xl bg-white/10 backdrop-blur-md flex items-center justify-center mb-8 mx-auto shadow-lg border border-white/20">
+<span class="material-symbols-outlined text-white text-4xl">settings_input_component</span>
+</div>
+<h3 class="text-3xl font-extrabold text-white text-center mb-4">Cirro Runtime</h3>
+<p class="text-lg text-on-primary/80 text-center leading-relaxed font-medium">Standardizes command translation, mission safety, and real-time state management at scale.</p>
+</div>
+<!-- Step 3: Supported Drones -->
+<div class="glass-card p-10 rounded-3xl shadow-2xl shadow-black/[0.03] border-t-8 border-secondary group hover:-translate-y-2 transition-transform duration-500">
+<div class="w-16 h-16 rounded-2xl bg-secondary-container flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-secondary text-3xl">flight</span>
+</div>
+<h3 class="text-2xl font-bold mb-4">Supported Fleet</h3>
+<p class="text-base text-on-surface-variant mb-8 leading-relaxed">Native integration with enterprise-grade hardware via proprietary bridge drivers and secure APIs.</p>
+<div class="space-y-4">
+<div class="flex items-center gap-4 opacity-70 group-hover:opacity-100 transition-opacity">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+<span class="text-sm font-bold tracking-tight">DJI Enterprise Series</span>
+</div>
+<div class="flex items-center gap-4 opacity-70 group-hover:opacity-100 transition-opacity">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+<span class="text-sm font-bold tracking-tight">Autel Robotics Fleet</span>
+</div>
+<div class="flex items-center gap-4 opacity-70 group-hover:opacity-100 transition-opacity">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+<span class="text-sm font-bold tracking-tight">Parrot Anafi Platform</span>
+</div>
+</div>
+</div>
+<!-- Connecting Lines (Visual Decor) -->
+<div class="hidden md:block absolute top-1/2 left-[25%] right-[25%] -z-0 h-[1px] bg-gradient-to-r from-transparent via-outline-variant/30 to-transparent"></div>
+</div>
+</div>
+</section>
+<!-- Features Bento Grid -->
+<section class="max-w-[1440px] mx-auto px-12 py-40">
+<div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-10 h-auto md:h-[720px]">
+<!-- Large Feature: Runtime -->
+<div class="md:col-span-2 md:row-span-2 glass-card p-14 rounded-[3rem] shadow-xl flex flex-col justify-between overflow-hidden relative">
+<div>
+<span class="text-primary font-black text-xs uppercase tracking-[0.3em]">Precision Performance</span>
+<h3 class="text-5xl font-extrabold tracking-tighter mt-8 mb-10 leading-tight">The Runtime of <br/> Global Records.</h3>
+<p class="text-on-surface-variant text-xl leading-relaxed max-w-md">Our runtime manages sub-millisecond command execution, ensuring stability even in the most degraded network conditions.</p>
+</div>
+<div class="mt-12 rounded-2xl border border-outline-variant/30 p-6 bg-slate-900 shadow-2xl">
+<code class="text-sm text-sky-400 font-mono"><span class="text-purple-400">cirro</span>.<span class="text-yellow-200">execute</span>(mission_plan).<span class="text-yellow-200">on</span>(<span class="text-emerald-400">'telem'</span>, (data) =&gt; <span class="text-yellow-200">updateUI</span>(data));</code>
+</div>
+<div class="absolute -bottom-20 -right-20 w-80 h-80 bg-primary/10 rounded-full blur-[100px]"></div>
+</div>
+<!-- Small Feature 1: Compatibility -->
+<div class="md:col-span-2 glass-card p-12 rounded-[3rem] shadow-lg flex items-center gap-10">
+<div class="w-20 h-20 shrink-0 rounded-3xl bg-secondary-container flex items-center justify-center border border-white/50">
+<span class="material-symbols-outlined text-on-secondary-container text-4xl">devices</span>
+</div>
+<div>
+<h4 class="text-2xl font-bold mb-3">Cross-Platform Sync</h4>
+<p class="text-on-surface-variant leading-relaxed text-lg">Your apps run seamlessly on Android tablets, iOS, and professional smart controllers without code changes.</p>
+</div>
+</div>
+<!-- Small Feature 2: Mission Execution -->
+<div class="md:col-span-1 glass-card p-12 rounded-[3rem] shadow-lg flex flex-col justify-between">
+<span class="material-symbols-outlined text-primary text-4xl mb-8">verified_user</span>
+<div>
+<h4 class="text-xl font-bold mb-3">Safety Protocol</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed font-medium">Automatic geofencing and smart battery failsafes baked into every SDK mission call.</p>
+</div>
+</div>
+<!-- Small Feature 3: Analytics -->
+<div class="md:col-span-1 glass-card p-12 rounded-[3rem] shadow-lg flex flex-col justify-between">
+<span class="material-symbols-outlined text-primary text-4xl mb-8">analytics</span>
+<div>
+<h4 class="text-xl font-bold mb-3">Live Insights</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed font-medium">Stream 4K low-latency video and deep telemetry back to your console in real-time.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="max-w-[1440px] mx-auto px-12 pb-40">
+<div class="primary-gradient rounded-[3rem] p-20 md:p-32 text-center relative overflow-hidden shadow-2xl shadow-primary/20">
+<div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 60px 60px;"></div>
+<div class="relative z-10">
+<h2 class="text-5xl md:text-7xl font-extrabold text-on-primary tracking-tighter mb-10">Ready to take flight?</h2>
+<p class="text-on-primary/80 text-xl md:text-2xl mb-14 max-w-3xl mx-auto leading-relaxed">Join 1,200+ elite developers building the next generation of autonomous flight systems on Cirro.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-6">
+<button class="bg-white text-primary px-12 py-5 rounded-xl font-headline font-bold text-xl hover:bg-slate-50 shadow-xl active:scale-95 transition-all" onclick="window.location.href='#{{DATA:SCREEN:SCREEN_3}}'">Start Developing</button>
+<button class="bg-black/20 backdrop-blur-md text-on-primary border border-white/20 px-12 py-5 rounded-xl font-headline font-bold text-xl hover:bg-black/30 active:scale-95 transition-all">Get API Key</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-white w-full border-t border-outline-variant/10">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-16 px-12 py-24 max-w-[1440px] mx-auto">
+<div class="col-span-2 md:col-span-1">
+<span class="font-headline font-extrabold text-sky-950 text-2xl block mb-6">Cirro</span>
+<p class="font-body text-base text-on-surface-variant max-w-xs leading-relaxed">Building the universal software layer for the global drone industry. Empowering autonomy everywhere.</p>
+</div>
+<div>
+<h5 class="font-headline font-bold text-sm text-on-surface uppercase tracking-widest mb-8">Product</h5>
+<ul class="space-y-4 font-body text-base text-on-surface-variant">
+<li><a class="hover:text-primary transition-all" href="#">Console</a></li>
+<li><a class="hover:text-primary transition-all" href="#">Runtime SDK</a></li>
+<li><a class="hover:text-primary transition-all" href="#">App Store</a></li>
+<li><a class="text-primary font-bold" href="#">System Status</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-headline font-bold text-sm text-on-surface uppercase tracking-widest mb-8">Resources</h5>
+<ul class="space-y-4 font-body text-base text-on-surface-variant">
+<li><a class="hover:text-primary transition-all" href="#">API Reference</a></li>
+<li><a class="hover:text-primary transition-all" href="#">Community Forum</a></li>
+<li><a class="hover:text-primary transition-all" href="#">Developer Guides</a></li>
+<li><a class="hover:text-primary transition-all" href="#">Priority Support</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-headline font-bold text-sm text-on-surface uppercase tracking-widest mb-8">Legal</h5>
+<ul class="space-y-4 font-body text-base text-on-surface-variant">
+<li><a class="hover:text-primary transition-all" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-primary transition-all" href="#">Terms of Service</a></li>
+<li><a class="hover:text-primary transition-all" href="#">Security Certs</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-[1440px] mx-auto px-12 py-10 border-t border-outline-variant/10 flex justify-between items-center">
+<span class="font-body text-sm text-on-surface-variant">© 2024 Cirro Drones. Precision engineered in San Francisco.</span>
+<div class="flex gap-8">
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-primary transition-colors">public</span>
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-primary transition-colors">terminal</span>
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-primary transition-colors">grid_view</span>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cirro Inspect - Guided Workflow</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-fixed-variant": "#5d4d76",
+              "surface-container-high": "#e5e9eb",
+              "on-secondary-fixed-variant": "#4d5d6c",
+              "inverse-on-surface": "#9b9d9e",
+              "tertiary-dim": "#5c4c74",
+              "secondary-fixed-dim": "#c6d6e8",
+              "on-error": "#fff7f6",
+              "outline": "#767c7e",
+              "surface-container-highest": "#dee3e6",
+              "surface-dim": "#d5dbdd",
+              "tertiary": "#685781",
+              "surface-container": "#ebeef0",
+              "on-primary": "#f5f9ff",
+              "on-tertiary-fixed": "#403158",
+              "inverse-primary": "#a6d8fb",
+              "primary-dim": "#225876",
+              "error-container": "#fa746f",
+              "on-tertiary": "#fef7ff",
+              "on-primary-container": "#124c69",
+              "primary-fixed-dim": "#98caec",
+              "secondary": "#516170",
+              "on-secondary": "#f6f9ff",
+              "on-primary-fixed": "#003851",
+              "on-surface": "#2d3335",
+              "background": "#f8f9fa",
+              "on-secondary-container": "#445362",
+              "secondary-fixed": "#d4e4f6",
+              "secondary-dim": "#455564",
+              "primary": "#316482",
+              "error": "#a83836",
+              "surface-bright": "#f8f9fa",
+              "surface-tint": "#316482",
+              "on-background": "#2d3335",
+              "primary-fixed": "#a6d8fb",
+              "primary-container": "#a6d8fb",
+              "tertiary-fixed": "#e3ceff",
+              "surface-container-lowest": "#ffffff",
+              "inverse-surface": "#0c0f10",
+              "secondary-container": "#d4e4f6",
+              "surface-container-low": "#f1f4f5",
+              "on-tertiary-container": "#53436c",
+              "tertiary-container": "#e3ceff",
+              "on-secondary-fixed": "#31414f",
+              "on-primary-fixed-variant": "#1f5673",
+              "surface": "#f8f9fa",
+              "on-error-container": "#6e0a12",
+              "tertiary-fixed-dim": "#d5c1f1",
+              "surface-variant": "#dee3e6",
+              "error-dim": "#67040d",
+              "on-surface-variant": "#5a6062",
+              "outline-variant": "#adb3b5"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .primary-gradient {
+            background: linear-gradient(135deg, #316482 0%, #225876 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body antialiased">
+<!-- Top Navigation (Shared Component Shell) -->
+<header class="fixed top-0 w-full z-50 glass-panel shadow-sm">
+<div class="flex justify-between items-center h-20 px-12 w-full max-w-screen-2xl mx-auto">
+<div class="text-2xl font-extrabold tracking-tighter text-sky-800 dark:text-sky-100 font-headline">
+                Cirro
+            </div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-manrope font-bold tracking-tight leading-[1.1] text-lg text-slate-500 hover:text-sky-600 transition-all active:scale-95" href="#">Home</a>
+<a class="font-manrope font-bold tracking-tight leading-[1.1] text-lg text-sky-700 border-b-2 border-sky-700 pb-1 transition-all active:scale-95" href="#">Apps</a>
+<a class="font-manrope font-bold tracking-tight leading-[1.1] text-lg text-slate-500 hover:text-sky-600 transition-all active:scale-95" href="#">Sessions</a>
+</nav>
+<div class="flex items-center gap-6">
+<button class="primary-gradient text-on-primary px-6 py-2.5 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all active:scale-95">
+                    Connect Drone
+                </button>
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border border-outline-variant/20">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Close up professional headshot of a person" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCF6142V8B91XNKgoWL17wi_YajdJJ0xbapyRJhSBELqnPtFFhcOXhkQUnSBOLmUDg57nZW7iLFV474nnIGwwxbTm01XnjkiLogVRfnHHSef45N4j6nroyRClYsQTrNgRHPku0jK1hlup-77cBDMByjsyuRrqr7KrHBv6o2t4DW9RaySNZ2In3RMW06HIplWwBOBjuEINtoOCNPvj_bC1ff4cgOJfm27uEUcpqZ70gAdG0ne65fb3v_xc8f4CkzdKD7rRtfDPMf19zU"/>
+</div>
+</div>
+</div>
+</header>
+<main class="pt-32 pb-20 px-6 max-w-screen-xl mx-auto min-h-screen">
+<!-- Stepper Progress Header -->
+<div class="flex flex-col items-center mb-16">
+<h1 class="font-headline text-5xl font-extrabold tracking-tight text-on-surface mb-8 text-center">New Inspection</h1>
+<div class="flex items-center gap-4 w-full max-w-2xl">
+<div class="flex flex-col items-center gap-2 flex-1">
+<div class="h-1.5 w-full rounded-full primary-gradient"></div>
+<span class="text-[11px] font-bold uppercase tracking-widest text-primary">Step 1: Type</span>
+</div>
+<div class="flex flex-col items-center gap-2 flex-1">
+<div class="h-1.5 w-full rounded-full bg-surface-container-high"></div>
+<span class="text-[11px] font-bold uppercase tracking-widest text-on-surface-variant/50">Step 2: Route</span>
+</div>
+<div class="flex flex-col items-center gap-2 flex-1">
+<div class="h-1.5 w-full rounded-full bg-surface-container-high"></div>
+<span class="text-[11px] font-bold uppercase tracking-widest text-on-surface-variant/50">Step 3: Confirm</span>
+</div>
+</div>
+</div>
+<!-- Content Area: Step 1 Active -->
+<section class="space-y-12">
+<div class="text-center">
+<h2 class="font-headline text-3xl font-bold tracking-tight text-on-surface mb-2">What are we inspecting today?</h2>
+<p class="text-on-surface-variant text-lg">Select an inspection module to begin pre-flight calibration.</p>
+</div>
+<!-- Inspection Type Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Roof Card -->
+<button class="group relative bg-surface-container-lowest p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-transparent hover:border-primary/10 active:scale-98 text-left">
+<div class="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-3xl" data-icon="roofing">roofing</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-2">Roof Inspection</h3>
+<p class="text-on-surface-variant leading-relaxed">High-resolution thermal and structural mapping for residential and industrial rooftops.</p>
+<div class="mt-6 flex items-center text-primary font-semibold text-sm">
+                        Select Type <span class="material-symbols-outlined ml-1 text-lg" data-icon="chevron_right">chevron_right</span>
+</div>
+</button>
+<!-- Fence Card -->
+<button class="group relative bg-surface-container-lowest p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-transparent hover:border-primary/10 active:scale-98 text-left">
+<div class="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-3xl" data-icon="fence">fence</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-2">Perimeter Fence</h3>
+<p class="text-on-surface-variant leading-relaxed">Automated linear tracking to detect structural breaches or wear along property lines.</p>
+<div class="mt-6 flex items-center text-primary font-semibold text-sm">
+                        Select Type <span class="material-symbols-outlined ml-1 text-lg" data-icon="chevron_right">chevron_right</span>
+</div>
+</button>
+<!-- Wall Card -->
+<button class="group relative bg-surface-container-lowest p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-transparent hover:border-primary/10 active:scale-98 text-left">
+<div class="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-3xl" data-icon="wall_art">wall_art</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-2">Facade &amp; Wall</h3>
+<p class="text-on-surface-variant leading-relaxed">Vertical flight patterns for detailed masonry and glass facade assessments.</p>
+<div class="mt-6 flex items-center text-primary font-semibold text-sm">
+                        Select Type <span class="material-symbols-outlined ml-1 text-lg" data-icon="chevron_right">chevron_right</span>
+</div>
+</button>
+</div>
+<!-- Map Preview (Subtle State) -->
+<div class="mt-16 rounded-xl overflow-hidden shadow-sm border border-outline-variant/10 relative group">
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10 opacity-60"></div>
+<div class="h-64 w-full bg-surface-container relative">
+<img alt="Subtle Map Preview" class="w-full h-full object-cover filter grayscale-[40%] opacity-50" data-alt="Satellite view of a suburban neighborhood" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbYygqP1WK9QEJ81p7KrHXgo174PAGdzKNbEb5W3hLYNtb7mv6YPZDben-P651xOh46TH6PHFslPHgCwi0R4Zg1ZZAtXEEZ-W0A6cYkrPf6MynZtmQUsPZ3E0jZOlONIchrnQZw84ZIxYc94jyuAcQ2uyK3ktZVBOd4lgYQnMODgN80K1irZqkCuRmYUZQfk9MYTfMocJ2gXXcfTO3VNUBYerrkESgo6yBzb94Nc2nBcz9BXMpVzqK2vF69Dl-rQHbGRME2TaLNi2C"/>
+<div class="absolute inset-0 flex items-center justify-center z-20">
+<div class="glass-panel px-6 py-3 rounded-full flex items-center gap-3 shadow-md border border-white/40">
+<span class="material-symbols-outlined text-primary" data-icon="location_on">location_on</span>
+<span class="text-sm font-semibold tracking-wide text-on-surface">San Francisco Mission District</span>
+</div>
+</div>
+</div>
+<div class="p-6 bg-surface-container-lowest relative z-20 flex justify-between items-center">
+<div>
+<p class="text-[11px] font-bold uppercase tracking-widest text-on-surface-variant mb-1">Current Workspace</p>
+<h4 class="font-headline text-xl font-bold">Industrial Site Alpha</h4>
+</div>
+<button class="bg-surface-container-high px-5 py-2 rounded-lg font-medium text-on-surface-variant hover:bg-surface-container-highest transition-colors active:scale-95 flex items-center gap-2">
+                        Change Location <span class="material-symbols-outlined text-lg" data-icon="map">map</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Navigation Actions -->
+<div class="mt-12 flex justify-between items-center">
+<button class="text-on-surface-variant font-semibold hover:text-primary transition-colors flex items-center gap-2 group">
+<span class="material-symbols-outlined transition-transform group-hover:-translate-x-1" data-icon="arrow_back">arrow_back</span>
+                Cancel Session
+            </button>
+<div class="flex items-center gap-4">
+<button class="bg-surface-container-high px-8 py-3 rounded-lg font-bold text-on-surface-variant opacity-50 cursor-not-allowed">
+                    Back
+                </button>
+<button class="primary-gradient px-12 py-3 rounded-lg font-bold text-on-primary shadow-lg hover:shadow-xl transition-all active:scale-95 flex items-center gap-2">
+                    Next: Route Review <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Contextual FAB (Suppressed on Step-by-Step flow per instruction, but shown here as a 'Help' trigger if needed in a real app context - actually suppressed for this focused task) -->
+<!-- Mobile Navigation Shell -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-white/80 backdrop-blur-xl border-t-0 shadow-[0_-4px_12px_rgba(0,0,0,0.05)] px-6 py-3 flex justify-between items-center z-50">
+<div class="flex flex-col items-center gap-1 text-slate-500">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Home</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-sky-700">
+<span class="material-symbols-outlined" data-icon="apps" style="font-variation-settings: 'FILL' 1;">apps</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Apps</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-500">
+<span class="material-symbols-outlined" data-icon="flight_takeoff">flight_takeoff</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Sessions</span>
+</div>
+</nav>
+</body></html>
