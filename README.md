@@ -30,7 +30,7 @@ Mocked in this repo:
 - Design partner application persistence
 - Any actual drone control, MAVSDK integration, telemetry backend, auth, or marketplace behavior
 
-The early-access form will write to Supabase if `NEXT_PUBLIC_SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` are configured. If Supabase is not configured, it will post to `EARLY_ACCESS_WEBHOOK_URL` if present. If neither backend is configured, it intentionally falls back to a logged demo-mode success so the site remains usable locally.
+The repo now standardizes on Supabase's current key model: `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` for public/browser-safe usage and `SUPABASE_SECRET_KEY` for server-side usage. The early-access form writes to Supabase when `NEXT_PUBLIC_SUPABASE_URL` and `SUPABASE_SECRET_KEY` are configured. If Supabase is not configured, it will post to `EARLY_ACCESS_WEBHOOK_URL` if present. If neither backend is configured, it intentionally falls back to a logged demo-mode success so the site remains usable locally.
 
 ## Validation goals
 
@@ -76,7 +76,8 @@ Optional:
 
 ```bash
 $env:NEXT_PUBLIC_SUPABASE_URL="https://your-project-ref.supabase.co"
-$env:SUPABASE_SERVICE_ROLE_KEY="your-service-role-key"
+$env:NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY="your-publishable-key"
+$env:SUPABASE_SECRET_KEY="your-secret-key"
 $env:EARLY_ACCESS_WEBHOOK_URL="https://your-webhook.example"
 ```
 

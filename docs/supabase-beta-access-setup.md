@@ -30,9 +30,10 @@ You can also keep that file as the source of truth if you later add Supabase CLI
 From `Settings -> API` in Supabase, copy:
 
 - `Project URL`
-- `service_role` key
+- `Publishable key`
+- `Secret key`
 
-Use the `service_role` key only on the server. Do not expose it in client code.
+Use the `Secret key` only on the server. Do not expose it in client code.
 
 ## 3. Add environment variables
 
@@ -40,7 +41,8 @@ Create `.env.local` from [.env.example](../.env.example) and set:
 
 ```bash
 NEXT_PUBLIC_SUPABASE_URL=https://your-project-ref.supabase.co
-SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=your-publishable-key
+SUPABASE_SECRET_KEY=your-secret-key
 ```
 
 Optional fallback only if you still want webhook-based capture when Supabase is not configured:
@@ -51,7 +53,7 @@ EARLY_ACCESS_WEBHOOK_URL=https://your-webhook.example
 
 Behavior order in this repo:
 
-1. If Supabase env vars exist, beta requests are inserted into Supabase.
+1. If `NEXT_PUBLIC_SUPABASE_URL` and `SUPABASE_SECRET_KEY` exist, beta requests are inserted into Supabase.
 2. If Supabase is not configured but `EARLY_ACCESS_WEBHOOK_URL` exists, the webhook is used.
 3. If neither backend is configured, submissions succeed in demo mode and are logged locally.
 
@@ -82,10 +84,13 @@ If you deploy on Vercel, add the same values in:
 Use:
 
 - `NEXT_PUBLIC_SUPABASE_URL`
-- `SUPABASE_SERVICE_ROLE_KEY`
+- `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`
+- `SUPABASE_SECRET_KEY`
 
 ## Notes
 
 - The app uses a server-only Supabase client in [admin.ts](../lib/supabase/admin.ts).
+- The repo also exposes the current public config pattern in [public.ts](../lib/supabase/public.ts).
 - The insert happens inside [forms.ts](../lib/actions/forms.ts).
-- The table has row-level security enabled, but this flow uses the server-side `service_role` key for inserts.
+- The table has row-level security enabled, but this flow uses the server-side `Secret key` for inserts.
+- For transition safety, the server client still accepts `SUPABASE_SERVICE_ROLE_KEY` as a fallback if an older environment has not been rotated yet.
