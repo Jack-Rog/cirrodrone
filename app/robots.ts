@@ -7,7 +7,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/thank-you", "/developer/console/"],
+        disallow: ["/admin/", "/thank-you", "/developer/console/"],
       },
     ],
     sitemap: "https://cirro-drone.com/sitemap.xml",

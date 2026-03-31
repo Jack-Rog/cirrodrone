@@ -82,6 +82,7 @@ $env:EARLY_ACCESS_WEBHOOK_URL="https://your-webhook.example"
 ```
 
 If you want a simple database-backed inbox for beta requests, follow [docs/supabase-beta-access-setup.md](./docs/supabase-beta-access-setup.md).
+If you want an in-app view of submissions, set `BETA_ACCESS_ADMIN_TOKEN` and open `/admin/beta-access`.
 
 ## Checks
 
